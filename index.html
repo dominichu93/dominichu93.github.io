@@ -1,147 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dominic Hurst</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dominic Hu – Portfolio</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <style>
+    :root {
+      --primary: #005f99;
+      --primary-hover: #003f70;
+      --text: #222;
+      --bg: #fff;
+      --card-bg: #f9f9f9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      padding-top: 70px;
+    }
+
+    header.site-header {
+      position: sticky;
+      top: 0;
+      background: white;
+      border-bottom: 1px solid #eee;
+      z-index: 999;
+    }
+
+    nav.nav {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    nav.nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav.nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    nav.nav a:hover {
+      color: var(--primary);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover, a:focus {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+
+    .section {
+      padding: 80px 20px;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background-color: #f2f8fb;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    .project-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #eee;
+      margin-top: 60px;
+    }
+
+    .footer a {
+      color: var(--primary);
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
 
-        <header>
-            <h1 style="text-align:left; margin-bottom: 0.8em;">Dominic Hurst</h1>
-        </header>
+  <header class="site-header">
+    <nav class="nav">
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <section class="intro">
-            <p>
-                I’m a business and operations generalist, interested in talent acquisition, people, and growth strategy.
-                I have a strong track record of building and developing high-performing teams, from 0 to 1, in high-stakes, high-growth,
-                series a, b, scale-up, and big tech environments. On this website I post about things I’m working on, and other things happening in the world.
-            </p>
-        </section>
+  <section class="hero">
+    <h1>Dominic Hu</h1>
+    <p>Software Engineer & Robotics Developer</p>
+  </section>
 
-        <main>
-            <section class="work">
-                <h2>Work</h2>
-                <p>
-                    Currently I'm leading talent & people at 
-                    <a href="https://www.monumental.co/our-vision" target="_blank" rel="noopener noreferrer">Monumental</a>, 
-                    where we're automating onsite construction with robotics and software. Previously, I led recruiting at 
-                    <a href="https://about.fb.com/news/2023/10/facebook-becomes-meta/" target="_blank" rel="noopener noreferrer">Meta</a>, 
-                    <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer">Meta AI Research</a>, 
-                    <a href="https://oaknorth.com/" target="_blank" rel="noopener noreferrer">OakNorth AI</a>, 
-                    <a href="https://blog.sphere.me" target="_blank" rel="noopener noreferrer">Sphere</a> (<a href="https://twitter.com" target="_blank" rel="noopener noreferrer">acquired by Twitter</a>), and 
-                    <a href="https://polystream.com/" target="_blank" rel="noopener noreferrer">Polystream</a> (<a href="https://mythical.games/" target="_blank" rel="noopener noreferrer">acquired by Mythical Games</a>)
-                    in London.
-                </p>
-            </section>
-
-            <section class="interests">
-                <h2>Interests</h2>
-                <p>I'm interested in the intersection of people, growth, and technology. I especially like:</p>
-                <ul>
-                    <li>Building scalable recruiting processes that maintain quality at speed</li>
-                    <li>Technical sourcing, and finding world-class talent in unlikely places</li>
-                    <li>Interesting applications of AI to real-world problems</li>
-                </ul>
-            </section>
-
-            <section class="writing">
-                <h2>Writing</h2>
-                <p>I occasionally write about things I'm working on:</p>
-                
-                <div style="margin-bottom:2em;">
-
-                    <span>
-                      Something I hear a lot from software engineers is: “𝘐’𝘷𝘦 𝘩𝘦𝘢𝘳𝘥 𝘰𝘧 𝘔𝘰𝘯𝘶𝘮𝘦𝘯𝘵𝘢𝘭 𝘢𝘯𝘥 𝘴𝘦𝘦𝘯 𝘺𝘰𝘶𝘳 𝘫𝘰𝘣 𝘱𝘰𝘴𝘵𝘪𝘯𝘨𝘴 — 𝘣𝘶𝘵 𝘐 𝘸𝘢𝘴𝘯’𝘵 𝘴𝘶𝘳𝘦 𝘪𝘧 𝘐’𝘮 𝘵𝘩𝘦 𝘳𝘪𝘨𝘩𝘵 𝘧𝘪𝘵...”
-                    </span>
-                    <br /><br />
-
-                    <span>
-                      The hesitation makes sense; building software for robots does sound niche. It’s a bit more complicated than SaaS; there are more constraints, but in the end — it’s still just software engineering.
-                    </span>
-                    <br /><br />
-
-                    <span>
-                      The challenges Monumental solves combine hardware, software, and infrastructure at scale — all while maintaining high availability on construction sites.
-                    </span>
-                    <br /><br />
-
-                    <span>
-                      <a href="https://www.monumental.co/atrium" target="_blank" rel="noopener noreferrer" 
-                         style="font-weight:bold;color:#2563eb;text-decoration:none;">
-                        𝗔𝘁𝗿𝗶𝘂𝗺
-                      </a>, our OS for software-defined construction, lets us plan, deploy, simulate, and optimise everything from wall designs to managing robot operations. It integrates CAD, ERP, robotics control, and fleet management — enabling us to analyse results, investigate failures, and refine our builds in the real world and simulation.
-                    </span>
-                    <br /><br />
-
-                    <span>
-                      We’re hiring software engineers who want to build full-stack software that interacts with the physical world.
-                    </span>
-                    <br /><br />
-
-                    <b>
-                      Read about 𝗔𝘁𝗿𝗶𝘂𝗺 𝗢𝗦, 𝗕𝗼𝘂𝗸𝗲 𝗴𝗲𝘁𝘁𝗶𝗻𝗴 𝗶𝗻𝘁𝗼 𝗿𝗼𝗯𝗼𝘁𝗶𝗰𝘀 𝗮𝘀 𝗮 𝘀𝗼𝗳𝘁𝘄𝗮𝗿𝗲 𝗲𝗻𝗴𝗶𝗻𝗲𝗲𝗿, and our 𝗦𝗪𝗘, 𝗳𝘂𝗹𝗹 𝘀𝘁𝗮𝗰𝗸 𝗝𝗗 in the comments.
-                    </b>
-                    <br /><br />
-
-                    <span style="font-style: italic;">
-                      🎥 Recent deployment at Kreekrijk, where our robots built 8 terraced houses without masons — a world first 🧱
-                    </span>
-
-                    <div style="padding:56.25% 0 0 0;position:relative;margin-top:1em;margin-bottom:1.5em;">
-                      <iframe src="https://player.vimeo.com/video/1099667889?h=5ea1ce2912&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                          style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                          frameborder="0" 
-                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                          referrerpolicy="strict-origin-when-cross-origin" 
-                          allowfullscreen 
-                          title="2025-04 Kreekrijk 2"></iframe>
-                    </div>
-                    
-                    <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7351178719773790210" target="_blank" rel="noopener noreferrer">
-                        See the full post and discussion on LinkedIn &rarr;
-                    </a>
-                </div>
-
-                <ul>
-                    <li>
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7270002649251352576/" target="_blank" rel="noopener noreferrer">
-                            My first eight months | Monumental
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/feed/update/urn:li:share:7348649763522719745/" target="_blank" rel="noopener noreferrer">
-                            The Economist | Monumental
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
-            <section class="contact" style="margin-top: 4em;">
-                <h2>Contact</h2>
-                <p>
-                  <a href="mailto:dominic@monumental.co" target="_blank" rel="noopener noreferrer">Email</a> | 
-                  <a href="https://www.linkedin.com/in/dhurst1/" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
-                  <a href="https://github.com/dominichu93" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </p>
-            </section>
-
-            <section class="more-about-monumental" style="margin-top: 4em; padding-top: 2em; border-top: 1px solid #ccc;">
-                <h2 style="font-weight: 500; margin-bottom: 1.3em;">More information about</h2>
-                <div style="text-align:center; margin: 0 0 1em 0;">
-                    <a href="https://www.monumental.co" target="_blank" rel="noopener noreferrer" style="display:inline-block;">
-                        <img src="https://github.com/user-attachments/assets/674ae1d1-5660-42cc-a676-c6b1da040f58" alt="MONUMENTAL_red" width="260" style="max-width:100%;height:auto;"/>
-                    </a>
-                </div>
-                <div style="padding:56.25% 0 0 0;position:relative; max-width: 900px; margin: auto;">
-                    <iframe src="https://www.monumental.co/our-vision" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none; min-height: 400px;" title="Monumental: Our Vision"></iframe>
-                </div>
-            </section>
-        </main>
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Project Title 1</h3>
+        <p>A short description of the project goes here. What it does, why it matters.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Title 2</h3>
+        <p>Another great project you’ve worked on. You can link to GitHub or a live site.</p>
+        <a href="#">View Project</a>
+      </div>
+      <!-- Add more cards as needed -->
     </div>
-    <script src="https://player.vimeo.com/api/player.js"></script>
+  </section>
+
+  <section id="resume" class="section">
+    <h2>Resume</h2>
+    <p style="text-align:center;">Download my <a href="#">resume here</a>.</p>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p style="text-align:center;">
+      <a href="mailto:youremail@example.com">youremail@example.com</a><br>
+      <a href="https://linkedin.com/in/dominichu93" target="_blank">LinkedIn</a> • 
+      <a href="https://github.com/dominichu93" target="_blank">GitHub</a>
+    </p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Dominic Hu</p>
+    <div>
+      <a href="mailto:youremail@example.com">Email</a> • 
+      <a href="https://github.com/dominichu93">GitHub</a> • 
+      <a href="https://linkedin.com/in/dominichu93">LinkedIn</a>
+    </div>
+  </footer>
+
 </body>
 </html>
