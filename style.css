@@ -1,75 +1,70 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+* { box-sizing: border-box; margin:0; padding:0; }
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fff;
+  background: #f7faff;
+  color: #1a1a1a;
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.65;
 }
-
 .container {
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 60px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 56px 30px 36px 30px;
+  border-radius: 18px;
+  box-shadow: 0 2px 22px 0 #1456c015;
 }
-
-h1 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 3rem;
-    color: #000;
+header h1 {
+  color: #2344a3;
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin: 0 0 1.6em 0;
+  letter-spacing: 0.05em;
 }
-
-h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 3rem 0 1rem 0;
-    color: #000;
-}
-
-p {
-    margin-bottom: 1.5rem;
-    color: #555;
-    font-size: 1rem;
-}
-
-ul {
-    margin-bottom: 1.5rem;
-    padding-left: 1.5rem;
-}
-
-li {
-    margin-bottom: 0.5rem;
-    color: #555;
-}
-
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 section {
-    margin-bottom: 2rem;
+  margin: 2.1em 0 2em 0;
 }
-
-/* Responsive for mobile */
-@media (max-width: 768px) {
-    .container {
-        padding: 40px 15px;
-    }
-    h1 {
-        font-size: 1.75rem;
-    }
-    iframe {
-        width: 100% !important;
-        min-width: 0 !important;
-    }
+h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a2c5b;
+  border-left: 3px solid #69a9ef;
+  padding-left: 12px;
+  margin-bottom: 1em;
+}
+ul {
+  list-style: disc inside;
+  margin-bottom: 1.3em;
+  margin-left: 1.2em;
+}
+li { margin-bottom: 0.5em; }
+a {
+  color: #2977d7;
+  text-decoration: none;
+  border-bottom: 1px dashed #bcd4fc;
+  font-weight: 500;
+  transition: color 0.15s, border-bottom 0.15s;
+}
+a:hover {
+  color: #174ca5;
+  border-bottom: 2px solid #174ca5;
+}
+b, strong {
+  font-weight: 700;
+  color: #1d386d;
+}
+p {
+  margin-bottom: 1.4em;
+  font-size: 1.08em;
+  color: #222b38;
+}
+iframe, video {
+  border-radius: 12px;
+  box-shadow: 0 1.5px 16px #97c2f320;
+  background: #eef3fa;
+}
+/* Responsive */
+@media (max-width: 600px) {
+  .container { padding: 25px 6px 18px 6px; }
+  header h1 { font-size: 1.25rem; }
+  h2 { font-size: 1rem; }
 }
