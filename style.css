@@ -1,70 +1,20 @@
 * { box-sizing: border-box; margin:0; padding:0; }
+
 body {
-  background: #f7faff;
-  color: #1a1a1a;
-  font-family: 'Inter', Arial, sans-serif;
+  background: #0f1117;
+  color: #e8eaed;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.65;
+  font-size: 16px;
 }
+
 .container {
-  max-width: 700px;
+  max-width: 760px;
   margin: 0 auto;
-  background: #fff;
-  padding: 56px 30px 36px 30px;
-  border-radius: 18px;
-  box-shadow: 0 2px 22px 0 #1456c015;
+  padding: 60px 32px 40px 32px;
+  background: #1a1d24;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
-header h1 {
-  color: #2344a3;
-  font-size: 2.1rem;
-  font-weight: 800;
-  margin: 0 0 1.6em 0;
-  letter-spacing: 0.05em;
-}
-section {
-  margin: 2.1em 0 2em 0;
-}
-h2 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1a2c5b;
-  border-left: 3px solid #69a9ef;
-  padding-left: 12px;
-  margin-bottom: 1em;
-}
-ul {
-  list-style: disc inside;
-  margin-bottom: 1.3em;
-  margin-left: 1.2em;
-}
-li { margin-bottom: 0.5em; }
-a {
-  color: #2977d7;
-  text-decoration: none;
-  border-bottom: 1px dashed #bcd4fc;
-  font-weight: 500;
-  transition: color 0.15s, border-bottom 0.15s;
-}
-a:hover {
-  color: #174ca5;
-  border-bottom: 2px solid #174ca5;
-}
-b, strong {
-  font-weight: 700;
-  color: #1d386d;
-}
-p {
-  margin-bottom: 1.4em;
-  font-size: 1.08em;
-  color: #222b38;
-}
-iframe, video {
-  border-radius: 12px;
-  box-shadow: 0 1.5px 16px #97c2f320;
-  background: #eef3fa;
-}
-/* Responsive */
-@media (max-width: 600px) {
-  .container { padding: 25px 6px 18px 6px; }
-  header h1 { font-size: 1.25rem; }
-  h2 { font-size: 1rem; }
-}
+
+/* Bold typography for your name */
