@@ -1,105 +1,135 @@
-/* ========== BASE STYLES ========== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dominic Hurst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f1117;
+      color: #e5e7eb;
+    }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #0f1117;
-  color: #e5e7eb;
-  line-height: 1.6;
-  padding: 2rem;
-}
+    .hero {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 2rem;
+    }
 
-a {
-  color: #60a5fa;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-a:hover {
-  color: #93c5fd;
-}
+    .hero-text {
+      flex: 1;
+    }
 
-h1, h2 {
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
+    .hero-text h1 {
+      font-size: 3rem;
+      margin: 0.5em 0;
+    }
 
-h1 {
-  font-size: 2rem;
-}
-h2 {
-  font-size: 1.3rem;
-  border-bottom: 1px solid #1f2937;
-  padding-bottom: 0.4rem;
-  margin-top: 2rem;
-}
+    .hero-text .email {
+      color: #aaa;
+      font-size: 1rem;
+    }
 
-ul {
-  margin-left: 1.5rem;
-  list-style: disc;
-}
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
 
-.container {
-  max-width: 800px;
-  margin: auto;
-}
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+    }
 
-.video-embed {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  margin-top: 1em;
-  margin-bottom: 2em;
-}
-.video-embed iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+    .intro {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
 
-/* Section spacing */
-section {
-  margin-bottom: 3rem;
-}
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-.iframe-wrapper {
-  position: relative;
-  padding-top: 56.25%;
-  height: 0;
-  margin-top: 1em;
-}
-.iframe-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+    .project {
+      text-align: center;
+    }
 
-/* Special classes */
-.video-caption {
-  font-style: italic;
-  margin-top: 1rem;
-}
+    .project img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
 
-.highlight-link {
-  color: #38bdf8;
-  font-weight: 500;
-}
+    .project p {
+      margin-top: 0.5rem;
+      color: #ccc;
+    }
 
-/* Logo centering */
-.monumental-logo {
-  text-align: center;
-  margin: 2em 0;
-}
-.monumental-logo img {
-  max-width: 260px;
-  width: 100%;
-  height: auto;
-}
+    footer {
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-text">
+      <p class="email">hi@dominichurst.com</p>
+      <h1>I Build Things.</h1>
+    </div>
+    <div class="hero-image">
+      <img src="your-hero-image.jpeg" alt="Dominic and dog by the sea" />
+    </div>
+  </section>
+
+  <section class="intro">
+    <p>
+      I’m a business and operations generalist, interested in talent acquisition, people, and growth strategy.
+      I’ve built and led high-performing teams in high-stakes, high-growth scale-ups and tech giants alike.
+    </p>
+  </section>
+
+  <section class="projects">
+    <div class="project">
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7270002649251352576/" target="_blank">
+        <img src="project-thumbnail-1.jpg" alt="Monumental Journey" />
+        <p>My first eight months | Monumental</p>
+      </a>
+    </div>
+    <div class="project">
+      <a href="https://www.linkedin.com/feed/update/urn:li:share:7348649763522719745/" target="_blank">
+        <img src="project-thumbnail-2.jpg" alt="Economist Feature" />
+        <p>The Economist | Monumental</p>
+      </a>
+    </div>
+    <div class="project">
+      <a href="https://www.linkedin.com/posts/dhurst1_we-are-opening-new-roles-at-monumental-activity-7355503547481739264-Z-Ea" target="_blank">
+        <img src="project-thumbnail-3.jpg" alt="New Roles" />
+        <p>New roles | Monumental</p>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Dominic Hurst — <a href="mailto:dominic@monumental.co">Email</a> | <a href="https://linkedin.com/in/dhurst1" target="_blank">LinkedIn</a> | <a href="https://github.com/dominichu93" target="_blank">GitHub</a>
+  </footer>
+
+</body>
+</html>
