@@ -1,90 +1,141 @@
-/* Page baseline */
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
 body {
-  background-color: #0f1117;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: #0f1117;
   color: #e5e7eb;
-  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
 }
 
-/* HERO LAYOUT */
+a { color: #60a5fa; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+
+/* ===== Hero ===== */
 .hero {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.1fr 0.9fr;   /* text left, image right */
   align-items: center;
-  gap: 3rem;
-  padding: 4rem 2rem 2rem;
+  gap: 32px;
+  padding: 24px 0 8px;
 }
 
-.hero-left .name {
-  margin: 0 0 0.25rem 0;
-  font-size: clamp(1.6rem, 2.5vw, 2rem);
-  font-weight: 600;
+.name {
+  font-size: clamp(32px, 5.5vw, 54px);
+  font-weight: 800;
+  margin: 0 0 8px;
   color: #fff;
 }
 
 .tagline {
-  margin: 0 0 0.75rem 0;
-  font-size: clamp(2.2rem, 6vw, 3.2rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.1;
+  font-size: clamp(20px, 3.5vw, 28px);
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: #e6edf6;
 }
 
 .one-liner {
-  max-width: 45ch;
-  color: #d1d5db;
-  font-size: 1.05rem;
+  max-width: 600px;
+  opacity: 0.9;
 }
 
-.hero-right img {
+.hero-img {
   width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  max-width: 520px;
+  aspect-ratio: 4/5;              /* tall portrait */
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  display: block;
+  margin-left: auto;              /* push to the far right */
 }
 
-/* ABOUT */
-.about {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 1rem 2rem 2.5rem;
-}
-
-.about h2 {
-  font-size: 1.4rem;
+/* ===== Sections ===== */
+.section-title {
+  font-size: 20px;
+  color: #fff;
+  margin: 28px 0 8px;
   border-bottom: 1px solid #1f2937;
-  padding-bottom: 0.4rem;
+  padding-bottom: 8px;
 }
 
-.interests {
-  margin-left: 1.1rem;
-  line-height: 1.7;
-  color: #cbd5e1;
+.subhead {
+  margin: 16px 0 8px;
+  color: #dbe2ea;
+  font-weight: 600;
 }
 
-/* PROJECTS (these match your existing classes too) */
-.projects {
+.about p { margin: 0 0 10px; }
+.interests { margin: 6px 0 0 18px; }
+.interests li { margin: 6px 0; }
+
+/* ===== Cards / Feature blocks ===== */
+.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1000px;
-  margin: auto;
+  gap: 22px;
+  margin-top: 26px;
 }
-.project { text-align: center; }
-.project img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease;
-}
-.project img:hover { transform: scale(1.03); }
-.project p { margin-top: 0.8rem; font-size: 1rem; color: #ccc; }
 
-/* MOBILE */
-@media (max-width: 820px) {
-  .hero {
-    grid-template-columns: 1fr;
-    padding-top: 3rem;
-  }
-  .hero-right { order: -1; }
+/* Two-column card with right image */
+.card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+  align-items: center;
+  background: #0f131a;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.card-text h3 {
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.card-text p { margin: 6px 0; }
+
+.card-media img {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1/1;            /* square */
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  display: block;
+  margin-left: auto;            /* keep image on the right edge */
+}
+
+/* Small button */
+.button {
+  display: inline-block;
+  background: #1f6feb;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.button:hover { background: #2b7bff; text-decoration: none; }
+
+/* ===== Footer ===== */
+.footer {
+  margin-top: 34px;
+  color: #9aa7b7;
+  text-align: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-img { margin: 0 auto; }
+  .card { grid-template-columns: 1fr; }
+  .card-media img { margin: 0 auto; }
 }
