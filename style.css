@@ -105,12 +105,13 @@ a:hover { text-decoration: underline; }
 .card-media img {
   width: 100%;
   max-width: 520px;
-  aspect-ratio: 1/1;            /* square */
+  aspect-ratio: 1/1;  /* square */
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 12px 40px rgba(0,0,0,.35);
   display: block;
-  margin-left: auto;            /* keep image on the right edge */
+  margin-left: auto; /* keep image on the right edge */
+  height: auto;      /* new fallback property */
 }
 
 /* Small button */
