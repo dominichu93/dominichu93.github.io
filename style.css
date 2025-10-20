@@ -9,158 +9,92 @@ body {
   color: #e5e7eb;
   line-height: 1.6;
 }
-
 a { color: #60a5fa; text-decoration: none; }
 a:hover { text-decoration: underline; }
 img { max-width: 100%; height: auto; display: block; }
 
-/* Optional page wrapper (use if desired) */
+/* Page width (makes cards feel ~half-size vs full-bleed) */
+main { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+
+/* Optional page wrapper (if used elsewhere) */
 .page { max-width: 1100px; margin: 0 auto; padding: 28px 20px 60px; }
 
-/* Focus ring for accessibility */
-:focus-visible {
-  outline: 2px solid #60a5fa;
-  outline-offset: 2px;
-  border-radius: 6px;
-}
+/* Focus ring */
+:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; border-radius: 6px; }
 
 /* ================================
    Hero
 ================================ */
 .hero {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr; /* text left, image right */
+  grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
   gap: 32px;
-  padding: 24px 20px 8px;
+  padding: 24px 0 8px;
 }
-
-.name {
-  font-size: clamp(32px, 5.5vw, 54px);
-  font-weight: 800;
-  margin: 0 0 8px;
-  color: #fff;
-}
-
-.tagline {
-  font-size: clamp(20px, 3.5vw, 28px);
-  font-weight: 600;
-  margin: 0 0 10px;
-  color: #e6edf6;
-}
-
+.name { font-size: clamp(32px, 5.5vw, 54px); font-weight: 800; margin: 0 0 8px; color: #fff; }
+.tagline { font-size: clamp(20px, 3.5vw, 28px); font-weight: 600; margin: 0 0 10px; color: #e6edf6; }
 .one-liner { max-width: 600px; opacity: 0.9; }
 
-.hero-img {
+/* Scoped: homepage hero portrait only */
+.hero .hero-img {
   width: 100%;
   max-width: 520px;
-  aspect-ratio: 4/5;          /* tall portrait */
+  aspect-ratio: 4/5;
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 12px 40px rgba(0,0,0,.35);
-  margin-left: auto;          /* push to the far right */
+  margin-left: auto;
 }
 
 /* ================================
    Sections
 ================================ */
 .section-title {
-  font-size: 20px;
-  color: #fff;
-  margin: 28px 20px 8px;
-  border-bottom: 1px solid #1f2937;
-  padding-bottom: 8px;
+  font-size: 20px; color: #fff; margin: 28px 0 8px;
+  border-bottom: 1px solid #1f2937; padding-bottom: 8px;
 }
-
-.subhead { margin: 16px 20px 8px; color: #dbe2ea; font-weight: 600; }
-.about p { margin: 0 20px 10px; }
-.interests { margin: 6px 20px 0 38px; }
+.subhead { margin: 16px 0 8px; color: #dbe2ea; font-weight: 600; }
+.about p { margin: 0 0 10px; }
+.interests { margin: 6px 0 0 18px; }
 .interests li { margin: 6px 0; }
 
 /* ================================
    Cards / Feature blocks
 ================================ */
-.cards {
-  display: grid;
-  gap: 22px;
-  margin: 26px 20px 0;
-}
-
-/* Two-column card with right image */
+.cards { display: grid; gap: 16px; margin-top: 18px; }
 .card {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 18px;
-  align-items: center;
-  background: #0f131a;
-  border: 1px solid #1f2937;
-  border-radius: 16px;
-  padding: 18px;
+  display: grid; grid-template-columns: 1fr 0.9fr; gap: 18px; align-items: center;
+  background: #0f131a; border: 1px solid #1f2937; border-radius: 16px; padding: 14px;
 }
-
-.card-text h3 {
-  margin: 0 0 6px;
-  color: #fff;
-  font-size: 20px;
-}
-
+.card-text h3 { margin: 0 0 6px; color: #fff; font-size: 20px; }
 .card-text p { margin: 6px 0; }
 
-/* --- Card media defaults --- */
-.card-media {
-  display: block;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 12px 40px rgba(0,0,0,.35);
-}
+/* Card media containers */
+.card-media { display: block; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,.35); }
 
 /* Default (non-video) cards use square crops */
-.card-media:not(.vimeo-thumb):not(.reddit-thumb) {
-  aspect-ratio: 1 / 1;
-}
+.card-media:not(.vimeo-thumb):not(.reddit-thumb) { aspect-ratio: 1/1; max-width: 380px; margin-left: auto; }
 
-/* All card images share the same fitting */
-.card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* --- Video/External thumbnails: 16:9 --- */
+/* Video/External thumbnails: 16:9 */
 .card-media.vimeo-thumb,
 .card-media.reddit-thumb {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  border-radius: 12px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.25);
+  position: relative; aspect-ratio: 16/9; border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.25); max-width: 380px; margin-left: auto;
 }
-
-/* Play badge for video-looking thumbs */
+.card-media img { width: 100%; height: 100%; object-fit: cover; }
 .play-badge {
-  position: absolute;
-  right: 12px;
-  bottom: 12px;
-  padding: .5rem .75rem;
-  border-radius: 999px;
-  background: rgba(0,0,0,.55);
-  font-size: 1.1rem;
-  line-height: 1;
-  color: #fff;
+  position: absolute; right: 12px; bottom: 12px; padding: .5rem .75rem; border-radius: 999px;
+  background: rgba(0,0,0,.55); font-size: 1.1rem; line-height: 1; color: #fff;
 }
-
-/* Hover nicety */
 .card-media img:hover { transform: scale(1.02); transition: transform .28s ease; }
 
 /* ================================
    Buttons
 ================================ */
 .button {
-  display: inline-block;
-  background: #1f6feb;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-weight: 600;
+  display: inline-block; background: #1f6feb; color:#fff; padding: 7px 11px;
+  border-radius: 8px; font-weight: 600; font-size: 14px;
 }
 .button:hover { background: #2b7bff; text-decoration: none; }
 
@@ -168,54 +102,47 @@ img { max-width: 100%; height: auto; display: block; }
    Responsive embeds (Vimeo, LinkedIn, etc.)
 ================================ */
 .embed-16x9 {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;      /* 16:9 ratio */
-  background: #000;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 12px 40px rgba(0,0,0,.25);
+  position: relative; width: 100%; padding-top: 56.25%;
+  background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,.25);
 }
-.embed-16x9 iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+.embed-16x9 iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
-/* Optional LinkedIn container if you use it */
+/* LinkedIn container (optional use on subpages) */
 .li-embed {
-  max-width: 720px;
-  margin: 2rem auto;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #111827;
-  box-shadow: 0 12px 40px rgba(0,0,0,.25);
-  border: 1px solid #1f2937;
+  max-width: 720px; margin: 2rem auto; border-radius: 12px; overflow: hidden;
+  background: #111827; box-shadow: 0 12px 40px rgba(0,0,0,.25); border: 1px solid #1f2937;
 }
 .li-embed iframe { width: 100%; border: 0; display: block; background: #111827; }
+
+/* Full Reddit post embed (redditmedia iframe) for subpages */
+.embed-reddit{
+  border: 1px solid #1f2937; border-radius: 12px; overflow: hidden;
+  background: #111827; box-shadow: 0 12px 40px rgba(0,0,0,.25); margin: 2rem 0;
+}
+.embed-reddit iframe{ width: 100%; height: 1200px; border: 0; display: block; }
+@media (max-width: 600px){ .embed-reddit iframe{ height: 900px; } }
+
+/* Post images (wide photos in articles) */
+.post-img {
+  width: 100%; border-radius: 12px; margin: 2rem 0;
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+}
 
 /* ================================
    Footer
 ================================ */
-.footer {
-  margin: 34px 20px 24px;
-  color: #9aa7b7;
-  text-align: center;
-  font-size: 14px;
-}
+.footer { margin: 34px 0 24px; color: #9aa7b7; text-align: center; font-size: 14px; }
 
 /* ================================
    Responsive
 ================================ */
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; }
-  .hero-img { margin: 0 auto; }
+  .hero .hero-img { margin: 0 auto; }
   .card { grid-template-columns: 1fr; }
 }
 
-/* Reduced motion preference */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
