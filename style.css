@@ -1,226 +1,273 @@
-/* === Base Setup === */
-:root {
-  --bg-color: #0f1012;
-  --text-color: #eaeaea;
-  --text-secondary: #a3a3a3;
-  --accent: #0069ff;
-  --card-bg: #16171a;
-  --border-radius: 16px;
-  --transition: 0.25s ease;
-}
-
+/* ===== Base Reset ===== */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--bg-color);
-  color: var(--text-color);
-  font-family: 'Inter', sans-serif;
+  background: #0d0d0d;
+  color: #e5e5e5;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-}
-
-/* === Typography === */
-h1, h2, h3, h4 {
-  color: #fff;
-  margin: 0 0 0.5em;
-}
-
-h1.name {
-  font-size: 2.5rem;
-  font-weight: 800;
-}
-
-h2.tagline {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.5em;
-}
-
-h3.section-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  border-bottom: 1px solid #2a2a2a;
-  padding-bottom: 0.4em;
-  margin-top: 3rem;
-  margin-bottom: 1.2rem;
-}
-
-/* === Layout: Hero === */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
-  max-width: 1100px;
-  margin: 80px auto 60px;
-  padding: 0 24px;
-}
-
-.hero-left {
-  flex: 1 1 400px;
-}
-
-.hero-right {
-  flex: 1 1 300px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-/* Scoped: homepage hero portrait only */
-.hero .hero-img {
-  width: 100%;
-  max-width: 520px;
-  aspect-ratio: 4/5;
-  object-fit: cover;
-  object-position: center bottom; /* show more of full image (feet etc.) */
-  border-radius: var(--border-radius);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-  margin-left: auto;
-}
-
-/* === About Section === */
-.about {
-  max-width: 850px;
+  max-width: 880px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 2rem;
 }
 
-.about p {
-  color: var(--text-secondary);
+/* ===== Typography ===== */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: .6rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+ul {
+  list-style: disc;
+  margin-left: 2rem;
+  padding-left: 0.8rem;
   margin-bottom: 1rem;
 }
 
-/* === Interests Section Styling (updated) === */
-.about ul.interests {
-  margin-left: 1.5rem;
-  padding-left: 1.25rem;
-  list-style-position: outside;
-  line-height: 1.6;
+li {
+  margin-bottom: 0.5rem;
 }
 
-.about ul.interests li {
-  margin-bottom: 0.6rem;
+/* ===== Links ===== */
+:root {
+  --link: #60a5fa;
+  --link-hover: #8ab8ff;
 }
 
-/* === Cards / Articles === */
-.cards {
-  max-width: 950px;
-  margin: 60px auto;
-  padding: 0 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.card {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  transition: transform var(--transition);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-.card--right-image .card-text {
-  flex: 1 1 50%;
-  padding: 24px 32px;
-}
-
-.card--right-image .card-media {
-  flex: 1 1 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #0d0d0d;
-  overflow: hidden;
-}
-
-.card--right-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Video play badge */
-.play-badge {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  padding: 10px 12px;
-  font-size: 14px;
-  color: #fff;
-}
-
-/* Buttons */
-.button {
-  background: var(--accent);
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 6px;
-  padding: 8px 14px;
-  display: inline-block;
-  margin-top: 12px;
-  transition: background var(--transition);
-}
-
-.button:hover {
-  background: #0052cc;
-}
-
-/* === Footer === */
-.footer {
-  text-align: center;
-  margin: 60px 0 40px;
-  font-size: 0.95rem;
-  color: #aaa;
-}
-
-.footer a {
-  color: #6daaff;
+a {
+  color: var(--link);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.footer a:hover {
+a:visited {
+  color: var(--link);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--link-hover);
+  text-decoration: underline;
+  outline: none;
+}
+
+/* ===== Buttons ===== */
+.button {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff !important;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.button:hover {
+  background: #1d4ed8;
+  text-decoration: none;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-right {
+  flex: 1;
+  text-align: right;
+}
+
+.hero .hero-img {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 4 / 5;
+  object-fit: contain; /* shows full feet */
+  object-position: center top;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  margin-left: auto;
+}
+
+/* ===== About Section ===== */
+.about {
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #222;
+  padding-bottom: 2rem;
+}
+
+.section-title {
   color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
-.footer .footer-link {
-  font-weight: 500;
+/* ===== Interests ===== */
+.interests {
+  list-style: disc;
+  margin-left: 2.5rem; /* indentation */
+  margin-top: 0.5rem;
+  color: #ddd;
 }
 
-/* === Responsive Tweaks === */
-@media (max-width: 768px) {
+.interests li {
+  margin-bottom: 0.6rem;
+}
+
+/* ===== Cards ===== */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  background: #111;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  transition: transform 0.25s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card-text {
+  flex: 1;
+}
+
+.card-text h3 {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.card-text p {
+  color: #ccc;
+}
+
+/* ===== Card Media (Images, Logos, Thumbnails) ===== */
+.card-media {
+  flex: 0 0 48%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0d0d0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+/* Slight scaling difference for balance */
+.media-16x9 img {
+  transform: scale(1.08);
+}
+
+.media-1x1 img {
+  transform: scale(0.92);
+  object-fit: contain;
+  padding: 16px;
+}
+
+/* Rounded edges */
+.card-media,
+.media-16x9 img,
+.media-1x1 img {
+  border-radius: 18px;
+}
+
+/* Hover zoom */
+.card-media:hover img {
+  transform: scale(1.1);
+}
+
+/* Remove play badge globally unless explicitly added */
+.play-badge {
+  display: none;
+}
+
+/* ===== Footer ===== */
+.footer {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #aaa;
+}
+
+.footer a {
+  color: var(--link);
+}
+
+.footer a:hover {
+  color: var(--link-hover);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 860px) {
+  body {
+    padding: 1.5rem;
+  }
+
   .hero {
     flex-direction: column;
     text-align: center;
   }
 
   .hero-right {
-    justify-content: center;
+    text-align: center;
+  }
+
+  .cards {
+    gap: 1.5rem;
   }
 
   .card {
     flex-direction: column;
+    padding: 1rem;
   }
 
-  .card--right-image .card-text,
-  .card--right-image .card-media {
-    flex: 1 1 100%;
+  .card-media {
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .card-media img {
+    transform: scale(1);
+  }
+
+  .interests {
+    margin-left: 1.8rem;
   }
 }
