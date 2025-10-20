@@ -1,9 +1,7 @@
-/* ===== Base Reset ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* ================================
+   Base Reset
+================================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   background: #0d0d0d;
@@ -15,259 +13,150 @@ body {
   padding: 2rem;
 }
 
-/* ===== Typography ===== */
+/* ================================
+   Typography
+================================ */
 h1, h2, h3, h4 {
   font-weight: 700;
   color: #fff;
   margin-bottom: .6rem;
 }
 
-p {
-  margin-bottom: 1rem;
-  color: #ccc;
+p { margin-bottom: 1rem; color: #ccc; }
+
+ul { list-style: disc; margin-left: 2rem; padding-left: .8rem; margin-bottom: 1rem; }
+li { margin-bottom: .5rem; }
+
+/* Slightly bigger name at the top */
+.name { font-size: clamp(36px, 5.8vw, 56px); line-height: 1.05; margin-bottom: .5rem; }
+
+/* ================================
+   Links
+================================ */
+:root { --link: #60a5fa; --link-hover: #8ab8ff; }
+
+a { color: var(--link); text-decoration: none; transition: color .2s ease; }
+a:visited { color: var(--link); }
+a:hover, a:focus-visible { color: var(--link-hover); text-decoration: underline; outline: none; }
+
+/* ================================
+   Buttons
+================================ */
+.button{
+  display:inline-block; background:#2563eb; color:#fff !important;
+  padding:.5rem 1rem; border-radius:8px; font-weight:600; transition:background .2s ease;
+}
+.button:hover{ background:#1d4ed8; text-decoration:none; }
+
+/* ================================
+   Hero
+================================ */
+.hero{
+  display:flex; align-items:flex-start; justify-content:space-between;
+  gap:2rem; margin-bottom:3rem; margin-top:.5rem;
+}
+.hero-left{ flex:1; }
+.hero-right{ flex:1; text-align:right; max-width:520px; }
+
+/* Show full artwork (feet visible) + rounded corners that actually clip */
+.hero .hero-img{
+  width:100%;
+  aspect-ratio: 3 / 4;              /* slightly taller than 4:5 so feet fit */
+  object-fit: contain;               /* don’t crop */
+  object-position: center bottom;
+  display:block;
+  border-radius:16px;
+  overflow:hidden;                   /* ensures the rounding clips */
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+  margin-left:auto;
 }
 
-ul {
-  list-style: disc;
-  margin-left: 2rem;
-  padding-left: 0.8rem;
-  margin-bottom: 1rem;
+/* ================================
+   About / Sections
+================================ */
+.about{
+  margin-bottom:3rem; border-bottom:1px solid #222; padding-bottom:2rem;
+}
+.section-title{
+  color:#fff; font-weight:700; font-size:1.1rem; margin-bottom:1rem;
 }
 
-li {
-  margin-bottom: 0.5rem;
+/* ================================
+   Interests (indented bullets)
+================================ */
+.interests{
+  list-style:disc; margin-left:2.5rem; margin-top:.5rem; color:#ddd;
+}
+.interests li{ margin-bottom:.6rem; }
+
+/* ================================
+   Cards
+================================ */
+.cards{
+  display:flex; flex-direction:column; gap:2rem; margin-bottom:3rem;
+}
+.card{
+  background:#111; border-radius:18px; box-shadow:0 8px 30px rgba(0,0,0,.25);
+  display:flex; align-items:center; justify-content:space-between;
+  overflow:hidden; padding:1.5rem; gap:1.5rem; transition:transform .25s ease;
+}
+.card:hover{ transform:scale(1.01); }
+.card-text{ flex:1; }
+.card-text h3{ color:#fff; font-weight:700; margin-bottom:.4rem; }
+.card-text p{ color:#ccc; }
+
+/* ================================
+   Card Media (photos vs logos)
+   - Photos intentionally larger than logos
+================================ */
+.card-media{
+  border-radius:18px; overflow:hidden; background:#0d0d0d;
+  display:flex; align-items:center; justify-content:center;
 }
 
-/* ===== Links ===== */
-:root {
-  --link: #60a5fa;
-  --link-hover: #8ab8ff;
+/* Make photos ~10–20% larger than logos */
+.card-media.photo-thumb { flex: 0 0 52%; aspect-ratio: 16 / 9; }
+.card-media.logo-thumb  { flex: 0 0 40%; aspect-ratio: 1 / 1; }
+
+.card-media img{
+  width:100%; height:100%; display:block; transition:transform .25s ease;
+  object-fit:cover; border-radius:inherit;
+}
+/* Logos should not crop; keep some air around */
+.card-media.logo-thumb img{
+  object-fit:contain; padding:10%;
 }
 
-a {
-  color: var(--link);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
+/* Hover zoom for imagery only */
+.card-media.photo-thumb:hover img{ transform:scale(1.06); }
 
-a:visited {
-  color: var(--link);
-}
+/* Remove any play badge on logo/vimeo tiles */
+.logo-thumb .play-badge,
+.vimeo-thumb .play-badge{ display:none; }
 
-a:hover,
-a:focus-visible {
-  color: var(--link-hover);
-  text-decoration: underline;
-  outline: none;
-}
+/* ================================
+   Footer
+================================ */
+.footer{ margin-top:3rem; font-size:.9rem; text-align:center; color:#aaa; }
+.footer a{ color:var(--link); }
+.footer a:hover{ color:var(--link-hover); }
 
-/* ===== Buttons ===== */
-.button {
-  display: inline-block;
-  background: #2563eb;
-  color: #fff !important;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background 0.2s ease;
-}
+/* ================================
+   Responsive
+================================ */
+@media (max-width: 860px){
+  body{ padding:1.5rem; }
 
-.button:hover {
-  background: #1d4ed8;
-  text-decoration: none;
-}
+  .hero{ flex-direction:column; text-align:center; }
+  .hero-right{ text-align:center; margin:0 auto; }
 
-/* ===== Hero Section ===== */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
+  .cards{ gap:1.5rem; }
+  .card{ flex-direction:column; padding:1rem; }
 
-.hero-left {
-  flex: 1;
-}
+  .card-media.photo-thumb,
+  .card-media.logo-thumb{ flex:0 0 100%; }
+  .card-media.photo-thumb{ aspect-ratio:16 / 9; }
+  .card-media.logo-thumb{ max-height:260px; }
 
-.hero-right {
-  flex: 1;
-  text-align: right;
-}
-
-.hero .hero-img {
-  width: 100%;
-  max-width: 520px;
-  aspect-ratio: 4 / 5;
-  object-fit: contain; /* shows full feet */
-  object-position: center top;
-  border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.35);
-  margin-left: auto;
-}
-
-/* ===== About Section ===== */
-.about {
-  margin-bottom: 3rem;
-  border-bottom: 1px solid #222;
-  padding-bottom: 2rem;
-}
-
-.section-title {
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-/* ===== Interests ===== */
-.interests {
-  list-style: disc;
-  margin-left: 2.5rem; /* indentation */
-  margin-top: 0.5rem;
-  color: #ddd;
-}
-
-.interests li {
-  margin-bottom: 0.6rem;
-}
-
-/* ===== Cards ===== */
-.cards {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.card {
-  background: #111;
-  border-radius: 18px;
-  box-shadow: 0 8px 30px rgba(0,0,0,.25);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  padding: 1.5rem;
-  gap: 1.5rem;
-  transition: transform 0.25s ease;
-}
-
-.card:hover {
-  transform: scale(1.01);
-}
-
-.card-text {
-  flex: 1;
-}
-
-.card-text h3 {
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 0.4rem;
-}
-
-.card-text p {
-  color: #ccc;
-}
-
-/* ===== Card Media (Images, Logos, Thumbnails) ===== */
-.card-media {
-  flex: 0 0 48%;
-  border-radius: 18px;
-  overflow: hidden;
-  background: #0d0d0d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.25s ease;
-}
-
-/* Slight scaling difference for balance */
-.media-16x9 img {
-  transform: scale(1.08);
-}
-
-.media-1x1 img {
-  transform: scale(0.92);
-  object-fit: contain;
-  padding: 16px;
-}
-
-/* Rounded edges */
-.card-media,
-.media-16x9 img,
-.media-1x1 img {
-  border-radius: 18px;
-}
-
-/* Hover zoom */
-.card-media:hover img {
-  transform: scale(1.1);
-}
-
-/* Remove play badge globally unless explicitly added */
-.play-badge {
-  display: none;
-}
-
-/* ===== Footer ===== */
-.footer {
-  margin-top: 3rem;
-  font-size: 0.9rem;
-  text-align: center;
-  color: #aaa;
-}
-
-.footer a {
-  color: var(--link);
-}
-
-.footer a:hover {
-  color: var(--link-hover);
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 860px) {
-  body {
-    padding: 1.5rem;
-  }
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-right {
-    text-align: center;
-  }
-
-  .cards {
-    gap: 1.5rem;
-  }
-
-  .card {
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  .card-media {
-    width: 100%;
-    max-height: 300px;
-  }
-
-  .card-media img {
-    transform: scale(1);
-  }
-
-  .interests {
-    margin-left: 1.8rem;
-  }
+  .interests{ margin-left:1.8rem; }
 }
