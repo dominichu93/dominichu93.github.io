@@ -13,7 +13,7 @@ a { color: #60a5fa; text-decoration: none; }
 a:hover { text-decoration: underline; }
 img { max-width: 100%; height: auto; display: block; }
 
-/* Page width (makes cards feel ~half-size vs full-bleed) */
+/* Page width */
 main { max-width: 880px; margin: 0 auto; padding: 0 16px; }
 
 /* Optional page wrapper (if used elsewhere) */
@@ -63,6 +63,7 @@ main { max-width: 880px; margin: 0 auto; padding: 0 16px; }
    Cards / Feature blocks
 ================================ */
 .cards { display: grid; gap: 16px; margin-top: 18px; }
+
 .card {
   display: grid; grid-template-columns: 1fr 0.9fr; gap: 18px; align-items: center;
   background: #0f131a; border: 1px solid #1f2937; border-radius: 16px; padding: 14px;
@@ -74,7 +75,9 @@ main { max-width: 880px; margin: 0 auto; padding: 0 16px; }
 .card-media { display: block; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,.35); }
 
 /* Default (non-video) cards use square crops */
-.card-media:not(.vimeo-thumb):not(.reddit-thumb) { aspect-ratio: 1/1; max-width: 380px; margin-left: auto; }
+.card-media:not(.vimeo-thumb):not(.reddit-thumb):not(.photo-thumb) {
+  aspect-ratio: 1/1; max-width: 380px; margin-left: auto;
+}
 
 /* Video/External thumbnails: 16:9 */
 .card-media.vimeo-thumb,
@@ -89,6 +92,10 @@ main { max-width: 880px; margin: 0 auto; padding: 0 16px; }
 }
 .card-media img:hover { transform: scale(1.02); transition: transform .28s ease; }
 
+/* Static photo thumbnails with 4:3 crop */
+.card-media.photo-thumb { aspect-ratio: 4/3; max-width: 380px; margin-left: auto; border-radius: 12px; }
+.card-media.photo-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
 /* ================================
    Buttons
 ================================ */
@@ -99,7 +106,7 @@ main { max-width: 880px; margin: 0 auto; padding: 0 16px; }
 .button:hover { background: #2b7bff; text-decoration: none; }
 
 /* ================================
-   Responsive embeds (Vimeo, LinkedIn, etc.)
+   Responsive embeds
 ================================ */
 .embed-16x9 {
   position: relative; width: 100%; padding-top: 56.25%;
@@ -107,7 +114,7 @@ main { max-width: 880px; margin: 0 auto; padding: 0 16px; }
 }
 .embed-16x9 iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
-/* LinkedIn container (optional use on subpages) */
+/* LinkedIn wrapper (optional on subpages) */
 .li-embed {
   max-width: 720px; margin: 2rem auto; border-radius: 12px; overflow: hidden;
   background: #111827; box-shadow: 0 12px 40px rgba(0,0,0,.25); border: 1px solid #1f2937;
@@ -123,10 +130,7 @@ main { max-width: 880px; margin: 0 auto; padding: 0 16px; }
 @media (max-width: 600px){ .embed-reddit iframe{ height: 900px; } }
 
 /* Post images (wide photos in articles) */
-.post-img {
-  width: 100%; border-radius: 12px; margin: 2rem 0;
-  box-shadow: 0 12px 40px rgba(0,0,0,.35);
-}
+.post-img { width: 100%; border-radius: 12px; margin: 2rem 0; box-shadow: 0 12px 40px rgba(0,0,0,.35); }
 
 /* ================================
    Footer
@@ -140,6 +144,13 @@ main { max-width: 880px; margin: 0 auto; padding: 0 16px; }
   .hero { grid-template-columns: 1fr; }
   .hero .hero-img { margin: 0 auto; }
   .card { grid-template-columns: 1fr; }
+  .card-media.vimeo-thumb,
+  .card-media.reddit-thumb,
+  .card-media.photo-thumb,
+  .card-media:not(.vimeo-thumb):not(.reddit-thumb):not(.photo-thumb) {
+    max-width: 100%;
+    margin: 12px 0 0;
+  }
 }
 
 /* Reduced motion */
