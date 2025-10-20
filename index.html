@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dominic Hurst</title>
 
-  <!-- (Optional) Preconnects used by Vimeo thumbnail fetch -->
+  <!-- Perf preconnects (optional but fine to keep) -->
   <link rel="preconnect" href="https://vimeo.com">
   <link rel="preconnect" href="https://player.vimeo.com">
   <link rel="preconnect" href="https://i.vimeocdn.com" crossorigin>
+  <link rel="preconnect" href="https://www.reddit.com">
+  <link rel="preconnect" href="https://redditmedia.com">
+  <link rel="dns-prefetch" href="https://vimeo.com">
+  <link rel="dns-prefetch" href="https://www.reddit.com">
 
-  <!-- Fonts + shared CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <!-- Fonts + CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=2025-10-20-2" />
 </head>
 <body>
   <main>
@@ -23,18 +27,16 @@
         <h1 class="name">Dominic Hurst</h1>
         <h2 class="tagline">I build teams.</h2>
         <p class="one-liner">
-          I work at the intersection of talent, people operations and execution —
-          scaling high-performing teams, from 0→1, in seed, series A, B, scale-up and big tech environments.
+          I work at the intersection of talent, people operations and execution — scaling
+          high-performing teams, from 0→1, in seed, series A, B, scale-up and big tech environments.
         </p>
       </div>
 
       <div class="hero-right">
-        <img src="your-hero-image.jpg"
-             class="hero-img"
-             alt="Dominic Hurst portrait"
-             loading="lazy"
-             width="520"
-             height="650" />
+        <!-- Wrapper ensures rounded corners show even on white-background images -->
+        <div class="hero-clip">
+          <img src="your-hero-image.jpg" class="hero-img" alt="Dominic Hurst portrait" loading="lazy" width="520" height="650">
+        </div>
       </div>
     </section>
 
@@ -55,119 +57,90 @@
       </p>
     </section>
 
-    <!-- Interests -->
-    <section class="about">
+    <!-- INTERESTS -->
+    <section>
       <h3 class="section-title">Interests</h3>
       <ul class="interests">
         <li>I grew up in a family of builders; I’m curious about how construction, architecture, and history shape the places we live.</li>
         <li>Economics, geopolitics, and how policy and markets shape systems like housing and innovation.</li>
         <li>How software and AI can make practical, positive changes in the physical world.</li>
-        <li>Finding exceptional talent in unlikely places.</li>
+        <li>Finding exceptional talent in unlikely places — and helping them ship.</li>
       </ul>
     </section>
 
     <!-- FEATURED / WRITING -->
     <section class="cards">
 
+      <!-- Entering new markets (photo) -->
       <article class="card card--right-image">
         <div class="card-text">
           <h3>Entering new markets | Country Manager, UK</h3>
           <p>Why we’re hiring our first Country Manager in the UK, and what the role owns.</p>
           <p><a class="button" href="country-manager-uk.html">Read the post</a></p>
         </div>
-
-        <!-- Static photo thumbnail -->
-        <a class="card-media photo-thumb" href="country-manager-uk.html" aria-label="Open post with photo">
-          <img
-            src="images/IMG_3052.jpg"
-            alt="Monumental deployment in London"
-            loading="lazy"
-            width="1280"
-            height="720"
-          />
+        <a class="card-media photo-thumb" href="country-manager-uk.html" aria-label="Open post">
+          <img src="images/IMG_3052.jpg" alt="Monumental deployment in London" loading="lazy" width="1280" height="720" />
         </a>
       </article>
 
+      <!-- 8 months (logo) -->
       <article class="card card--right-image">
         <div class="card-text">
           <h3>My first eight months | Monumental</h3>
           <p>Team growth, funding, deployments, and a world-first: robots laying bricks on-site.</p>
           <p><a class="button" href="monumental-8-months.html">Read the post</a></p>
         </div>
-
-        <!-- Vimeo thumbnail (placeholder swapped after fetch) -->
-        <a class="card-media vimeo-thumb" href="monumental-8-months.html"
-           data-vimeo-id="1107678192" aria-label="Open post with video">
-          <img src="images/symbol_red.svg" alt="Monumental — video thumbnail" loading="lazy" width="1280" height="720" />
-          <span class="play-badge" aria-hidden="true">▶</span>
+        <a class="card-media logo-thumb" href="monumental-8-months.html" aria-label="Open post">
+          <img src="images/symbol_red.svg" alt="Monumental logo" loading="lazy" width="512" height="512" />
         </a>
       </article>
 
+      <!-- New roles (photo) -->
       <article class="card card--right-image">
         <div class="card-text">
           <h3>New roles | Monumental</h3>
           <p>Growth update and new roles — this post picked up traction on LinkedIn and Reddit.</p>
           <p><a class="button" href="new-roles.html">See roles update</a></p>
         </div>
-
-        <!-- Static photo thumbnail (DJI image) -->
         <a class="card-media photo-thumb" href="new-roles.html" aria-label="Open roles update">
-          <img
-            src="images/new-roles-dji.jpg"
-            alt="Aerial photo of Monumental’s facility"
-            loading="lazy"
-            width="1200"
-            height="900"
-          />
+          <img src="images/new-roles-dji.jpg" alt="Aerial photo of Monumental’s facility" loading="lazy" width="1200" height="900" />
         </a>
       </article>
 
+      <!-- Atrium OS (logo) -->
       <article class="card card--right-image">
         <div class="card-text">
           <h3>Atrium OS | Monumental</h3>
           <p>Our software platform for software-defined construction.</p>
           <p><a class="button" href="https://www.monumental.co/atrium" target="_blank" rel="noopener">Learn more</a></p>
         </div>
-        <a class="card-media" href="https://www.monumental.co/atrium" target="_blank" rel="noopener">
-          <img src="images/symbol_blue.svg" alt="Atrium OS" />
+        <a class="card-media logo-thumb" href="https://www.monumental.co/atrium" target="_blank" rel="noopener">
+          <img src="images/symbol_blue.svg" alt="Atrium OS" loading="lazy" width="512" height="512" />
         </a>
       </article>
 
+      <!-- Full-Stack SWE (photo wide) -->
       <article class="card card--right-image">
         <div class="card-text">
           <h3>Full-Stack SWE & 8 villas at Kreekrijk</h3>
           <p>Why this is still “just software”, plus a recent on-site deployment.</p>
           <p><a class="button" href="full-stack-swe-kreekrijk.html">Read more</a></p>
         </div>
-        <a class="card-media" href="full-stack-swe-kreekrijk.html">
-          <img src="RobotPhoto.jpg" alt="Monumental robot thumbnail" />
+        <a class="card-media photo-thumb" href="full-stack-swe-kreekrijk.html">
+          <img src="RobotPhoto.jpg" alt="Monumental robot thumbnail" loading="lazy" />
         </a>
       </article>
 
     </section>
   </main>
 
-  <!-- Vimeo thumbnail upgrader (only affects the 8-months card) -->
-  <script>
-  window.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.vimeo-thumb[data-vimeo-id]').forEach(el => {
-      const id = el.dataset.vimeoId;
-      const img = el.querySelector('img');
-      fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${encodeURIComponent(id)}`)
-        .then(r => r.ok ? r.json() : Promise.reject(r))
-        .then(d => {
-          const hi = (d.thumbnail_url || '').replace('_295x166', '_1280');
-          if (hi || d.thumbnail_url) img.src = hi || d.thumbnail_url;
-        })
-        .catch(() => { /* keep placeholder */ });
-    });
-  });
-  </script>
-
-<footer class="footer">
-  &copy; 2025 Dominic Hurst —
-  <a href="mailto:dominic@monumental.co">Email</a> |
-  <a href="https://linkedin.com/in/dhurst1" target="_blank" rel="noopener">LinkedIn</a> |
-  <a href="https://github.com/dominichu93" target="_blank" rel="noopener">GitHub</a> |
-  <a href="https://calendly.com/dom-monumental/vc" target="_blank" rel="noopener" class="footer-link">Schedule a call</a>
-</footer>
+  <footer class="footer">
+    &copy; 2025 Dominic Hurst —
+    <a href="mailto:dominic@monumental.co">Email</a> ·
+    <a href="https://linkedin.com/in/dhurst1" target="_blank" rel="noopener">LinkedIn</a> ·
+    <a href="https://github.com/dominichu93" target="_blank" rel="noopener">GitHub</a> ·
+    <a href="projects.html">Projects</a> ·
+    <a href="https://calendly.com/dom-monumental/vc" target="_blank" rel="noopener">Schedule time</a>
+  </footer>
+</body>
+</html>
