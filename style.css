@@ -40,8 +40,9 @@ main { max-width: 880px; margin: 0 auto; padding: 0 16px; }
 .hero .hero-img {
   width: 100%;
   max-width: 520px;
-  aspect-ratio: 4/5;
-  object-fit: cover;
+  height: auto; /* remove fixed aspect */
+  object-fit: contain; /* show full image */
+  background-color: #0b0c0f; /* optional: filler behind transparent edges */
   border-radius: 16px;
   box-shadow: 0 12px 40px rgba(0,0,0,.35);
   margin-left: auto;
