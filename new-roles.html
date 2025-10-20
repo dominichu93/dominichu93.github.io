@@ -4,26 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>New Roles | Monumental</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container" style="max-width: 800px; margin: auto; padding: 2rem;">
-    <h1>New Roles | Monumental</h1>
+  <meta name="description" content="Update on Monumental’s growth and open roles, plus the Reddit discussion the post sparked." />
 
+  <!-- Fonts + shared stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Page-local tweaks -->
+  <style>
+    header { text-align:center; padding:2rem 1rem 1rem; }
+    header h1 { font-size:clamp(26px,4.8vw,38px); font-weight:800; color:#fff; margin:.5rem 0; }
+    header a { color:#60a5fa; font-size:.95rem; }
+    main.content { max-width:880px; margin:0 auto; padding:32px 20px 72px; line-height:1.6; }
+
+    /* Full Reddit post embed */
+    .embed-reddit{
+      border:1px solid #1f2937; border-radius:12px; overflow:hidden;
+      background:#111827; box-shadow:0 12px 40px rgba(0,0,0,.25);
+      margin:2rem 0;
+    }
+    .embed-reddit iframe{
+      width:100%; height:1200px; border:0; display:block;
+    }
+    @media (max-width:600px){ .embed-reddit iframe{ height:900px; } }
+
+    /* Image */
+    .hero-img{
+      width:100%; border-radius:12px; margin:2rem 0;
+      box-shadow:0 12px 40px rgba(0,0,0,.35);
+    }
+
+    footer { text-align:center; padding:2rem; color:#6b7280; font-size:.9rem; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>New Roles | Monumental</h1>
+    <p><a href="index.html">← Back to Home</a></p>
+  </header>
+
+  <main class="content">
     <p>Last week, I shared a post on LinkedIn about our growth and open roles at Monumental. The post unexpectedly gained traction — and ended up discussed by a few hundred people on Reddit too.</p>
 
-    <div style="margin: 2rem 0;">
-      <blockquote class="reddit-embed-bq" data-embed-height="560" data-embed-theme="dark" data-embed-showmedia="true">
-        <a href="https://www.reddit.com/r/singularity/comments/1mbawpt/construction_workers_may_become_obsolete_soon_in/?utm_source=share&utm_medium=web2x&context=3">Reddit: Construction workers may become obsolete soon</a>
-      </blockquote>
-      <script async src="https://embed.reddit.com/widgets.js" charset="UTF-8"></script>
+    <!-- Full Reddit post (shows your LinkedIn image + comments) -->
+    <div class="embed-reddit">
+      <iframe
+        src="https://www.redditmedia.com/r/singularity/comments/1mbawpt/construction_workers_may_become_obsolete_soon_in_the_first_world/?embed=true&theme=dark&showmedia=true"
+        loading="lazy"
+        scrolling="yes"
+        title="Reddit post: Construction workers may become obsolete soon in the first world">
+      </iframe>
     </div>
 
-    <img src="DJI_20240731144706_0002_D.jpeg" alt="Aerial site drone photo" style="width: 100%; border-radius: 10px; margin: 1rem 0;" />
+    <!-- Drone image (ensure filename/case matches your repo exactly) -->
+    <img class="hero-img" src="DJI_20240731144706_0002_D.jpeg"
+         alt="Aerial site drone photo of Monumental’s test facility" loading="lazy" />
 
-    <p>This drone shot shows our test facility — it's where the robots and our full-stack software platform, Atrium, come together.</p>
+    <p>This drone shot shows our facility — it’s where the robots and our software platform, Atrium, come together.</p>
+  </main>
 
-    <p><a href="index.html">← Back to main page</a></p>
-  </div>
+  <footer>
+    &copy; 2025 Dominic Hurst
+  </footer>
 </body>
 </html>
