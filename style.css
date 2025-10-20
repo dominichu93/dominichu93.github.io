@@ -1,160 +1,226 @@
-/* ================================
-   Base
-================================ */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+/* === Base Setup === */
+:root {
+  --bg-color: #0f1012;
+  --text-color: #eaeaea;
+  --text-secondary: #a3a3a3;
+  --accent: #0069ff;
+  --card-bg: #16171a;
+  --border-radius: 16px;
+  --transition: 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background: #0f1117;
-  color: #e5e7eb;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
 }
-a { color: #60a5fa; text-decoration: none; }
-a:hover { text-decoration: underline; }
-img { max-width: 100%; height: auto; display: block; }
 
-/* Page width */
-main { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+/* === Typography === */
+h1, h2, h3, h4 {
+  color: #fff;
+  margin: 0 0 0.5em;
+}
 
-/* Optional page wrapper (if used elsewhere) */
-.page { max-width: 1100px; margin: 0 auto; padding: 28px 20px 60px; }
+h1.name {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
 
-/* Focus ring */
-:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; border-radius: 6px; }
+h2.tagline {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
 
-/* ================================
-   Hero
-================================ */
+h3.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 0.4em;
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+}
+
+/* === Layout: Hero === */
 .hero {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 32px;
-  padding: 24px 0 8px;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 80px auto 60px;
+  padding: 0 24px;
 }
-.name { font-size: clamp(32px, 5.5vw, 54px); font-weight: 800; margin: 0 0 8px; color: #fff; }
-.tagline { font-size: clamp(20px, 3.5vw, 28px); font-weight: 600; margin: 0 0 10px; color: #e6edf6; }
-.one-liner { max-width: 600px; opacity: 0.9; }
+
+.hero-left {
+  flex: 1 1 400px;
+}
+
+.hero-right {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: flex-end;
+}
 
 /* Scoped: homepage hero portrait only */
 .hero .hero-img {
   width: 100%;
   max-width: 520px;
-  height: auto; /* remove fixed aspect */
-  object-fit: contain; /* show full image */
-  background-color: #0b0c0f; /* optional: filler behind transparent edges */
-  border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: center bottom; /* show more of full image (feet etc.) */
+  border-radius: var(--border-radius);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   margin-left: auto;
 }
 
-/* ================================
-   Sections
-================================ */
-.section-title {
-  font-size: 20px; color: #fff; margin: 28px 0 8px;
-  border-bottom: 1px solid #1f2937; padding-bottom: 8px;
+/* === About Section === */
+.about {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
-.subhead { margin: 16px 0 8px; color: #dbe2ea; font-weight: 600; }
-.about p { margin: 0 0 10px; }
-.interests { margin: 6px 0 0 18px; }
-.interests li { margin: 6px 0; }
 
-/* ================================
-   Cards / Feature blocks
-================================ */
-.cards { display: grid; gap: 16px; margin-top: 18px; }
+.about p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+/* === Interests Section Styling (updated) === */
+.about ul.interests {
+  margin-left: 1.5rem;
+  padding-left: 1.25rem;
+  list-style-position: outside;
+  line-height: 1.6;
+}
+
+.about ul.interests li {
+  margin-bottom: 0.6rem;
+}
+
+/* === Cards / Articles === */
+.cards {
+  max-width: 950px;
+  margin: 60px auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
 .card {
-  display: grid; grid-template-columns: 1fr 0.9fr; gap: 18px; align-items: center;
-  background: #0f131a; border: 1px solid #1f2937; border-radius: 16px; padding: 14px;
-}
-.card-text h3 { margin: 0 0 6px; color: #fff; font-size: 20px; }
-.card-text p { margin: 6px 0; }
-
-/* Card media containers */
-.card-media { display: block; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,.35); }
-
-/* Default (non-video) cards use square crops */
-.card-media:not(.vimeo-thumb):not(.reddit-thumb):not(.photo-thumb) {
-  aspect-ratio: 1/1; max-width: 380px; margin-left: auto;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition);
 }
 
-/* Video/External thumbnails: 16:9 */
-.card-media.vimeo-thumb,
-.card-media.reddit-thumb {
-  position: relative; aspect-ratio: 16/9; border-radius: 12px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.25); max-width: 380px; margin-left: auto;
+.card:hover {
+  transform: translateY(-4px);
 }
-.card-media img { width: 100%; height: 100%; object-fit: cover; }
+
+.card--right-image .card-text {
+  flex: 1 1 50%;
+  padding: 24px 32px;
+}
+
+.card--right-image .card-media {
+  flex: 1 1 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0d0d0d;
+  overflow: hidden;
+}
+
+.card--right-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Video play badge */
 .play-badge {
-  position: absolute; right: 12px; bottom: 12px; padding: .5rem .75rem; border-radius: 999px;
-  background: rgba(0,0,0,.55); font-size: 1.1rem; line-height: 1; color: #fff;
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #fff;
 }
-.card-media img:hover { transform: scale(1.02); transition: transform .28s ease; }
 
-/* Static photo thumbnails with 4:3 crop */
-.card-media.photo-thumb { aspect-ratio: 4/3; max-width: 380px; margin-left: auto; border-radius: 12px; }
-.card-media.photo-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-/* ================================
-   Buttons
-================================ */
+/* Buttons */
 .button {
-  display: inline-block; background: #1f6feb; color:#fff; padding: 7px 11px;
-  border-radius: 8px; font-weight: 600; font-size: 14px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 8px 14px;
+  display: inline-block;
+  margin-top: 12px;
+  transition: background var(--transition);
 }
-.button:hover { background: #2b7bff; text-decoration: none; }
 
-/* ================================
-   Responsive embeds
-================================ */
-.embed-16x9 {
-  position: relative; width: 100%; padding-top: 56.25%;
-  background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,.25);
+.button:hover {
+  background: #0052cc;
 }
-.embed-16x9 iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
-/* LinkedIn wrapper (optional on subpages) */
-.li-embed {
-  max-width: 720px; margin: 2rem auto; border-radius: 12px; overflow: hidden;
-  background: #111827; box-shadow: 0 12px 40px rgba(0,0,0,.25); border: 1px solid #1f2937;
+/* === Footer === */
+.footer {
+  text-align: center;
+  margin: 60px 0 40px;
+  font-size: 0.95rem;
+  color: #aaa;
 }
-.li-embed iframe { width: 100%; border: 0; display: block; background: #111827; }
 
-/* Full Reddit post embed (redditmedia iframe) for subpages */
-.embed-reddit{
-  border: 1px solid #1f2937; border-radius: 12px; overflow: hidden;
-  background: #111827; box-shadow: 0 12px 40px rgba(0,0,0,.25); margin: 2rem 0;
+.footer a {
+  color: #6daaff;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
-.embed-reddit iframe{ width: 100%; height: 1200px; border: 0; display: block; }
-@media (max-width: 600px){ .embed-reddit iframe{ height: 900px; } }
 
-/* Post images (wide photos in articles) */
-.post-img { width: 100%; border-radius: 12px; margin: 2rem 0; box-shadow: 0 12px 40px rgba(0,0,0,.35); }
+.footer a:hover {
+  color: #fff;
+}
 
-/* ================================
-   Footer
-================================ */
-.footer { margin: 34px 0 24px; color: #9aa7b7; text-align: center; font-size: 14px; }
+.footer .footer-link {
+  font-weight: 500;
+}
 
-/* ================================
-   Responsive
-================================ */
-@media (max-width: 860px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero .hero-img { margin: 0 auto; }
-  .card { grid-template-columns: 1fr; }
-  .card-media.vimeo-thumb,
-  .card-media.reddit-thumb,
-  .card-media.photo-thumb,
-  .card-media:not(.vimeo-thumb):not(.reddit-thumb):not(.photo-thumb) {
-    max-width: 100%;
-    margin: 12px 0 0;
+/* === Responsive Tweaks === */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
   }
-}
 
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
+  .hero-right {
+    justify-content: center;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .card--right-image .card-text,
+  .card--right-image .card-media {
+    flex: 1 1 100%;
+  }
 }
