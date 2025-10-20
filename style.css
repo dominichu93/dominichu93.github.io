@@ -1,4 +1,6 @@
-/* ===== Base ===== */
+/* ================================
+   Base
+================================ */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body {
@@ -10,20 +12,27 @@ body {
 
 a { color: #60a5fa; text-decoration: none; }
 a:hover { text-decoration: underline; }
+img { max-width: 100%; height: auto; display: block; }
 
-.page {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 28px 20px 60px;
+/* Optional page wrapper (use if desired) */
+.page { max-width: 1100px; margin: 0 auto; padding: 28px 20px 60px; }
+
+/* Focus ring for accessibility */
+:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+  border-radius: 6px;
 }
 
-/* ===== Hero ===== */
+/* ================================
+   Hero
+================================ */
 .hero {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;   /* text left, image right */
+  grid-template-columns: 1.1fr 0.9fr; /* text left, image right */
   align-items: center;
   gap: 32px;
-  padding: 24px 0 8px;
+  padding: 24px 20px 8px;
 }
 
 .name {
@@ -40,46 +49,41 @@ a:hover { text-decoration: underline; }
   color: #e6edf6;
 }
 
-.one-liner {
-  max-width: 600px;
-  opacity: 0.9;
-}
+.one-liner { max-width: 600px; opacity: 0.9; }
 
 .hero-img {
   width: 100%;
   max-width: 520px;
-  aspect-ratio: 4/5;              /* tall portrait */
+  aspect-ratio: 4/5;          /* tall portrait */
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 12px 40px rgba(0,0,0,.35);
-  display: block;
-  margin-left: auto;              /* push to the far right */
+  margin-left: auto;          /* push to the far right */
 }
 
-/* ===== Sections ===== */
+/* ================================
+   Sections
+================================ */
 .section-title {
   font-size: 20px;
   color: #fff;
-  margin: 28px 0 8px;
+  margin: 28px 20px 8px;
   border-bottom: 1px solid #1f2937;
   padding-bottom: 8px;
 }
 
-.subhead {
-  margin: 16px 0 8px;
-  color: #dbe2ea;
-  font-weight: 600;
-}
-
-.about p { margin: 0 0 10px; }
-.interests { margin: 6px 0 0 18px; }
+.subhead { margin: 16px 20px 8px; color: #dbe2ea; font-weight: 600; }
+.about p { margin: 0 20px 10px; }
+.interests { margin: 6px 20px 0 38px; }
 .interests li { margin: 6px 0; }
 
-/* ===== Cards / Feature blocks ===== */
+/* ================================
+   Cards / Feature blocks
+================================ */
 .cards {
   display: grid;
   gap: 22px;
-  margin-top: 26px;
+  margin: 26px 20px 0;
 }
 
 /* Two-column card with right image */
@@ -102,53 +106,75 @@ a:hover { text-decoration: underline; }
 
 .card-text p { margin: 6px 0; }
 
-.card-media img {
-  width: 100%;
-  max-width: 520px;
-  aspect-ratio: 1/1;  /* square */
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+/* --- Card media defaults --- */
+.card-media {
   display: block;
-  margin-left: auto; /* keep image on the right edge */
-  height: auto;      /* new fallback property */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
 }
 
-/* Small button */
+/* Default (non-video) cards use square crops */
+.card-media:not(.vimeo-thumb):not(.reddit-thumb) {
+  aspect-ratio: 1 / 1;
+}
+
+/* All card images share the same fitting */
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Video/External thumbnails: 16:9 --- */
+.card-media.vimeo-thumb,
+.card-media.reddit-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.25);
+}
+
+/* Play badge for video-looking thumbs */
+.play-badge {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: .5rem .75rem;
+  border-radius: 999px;
+  background: rgba(0,0,0,.55);
+  font-size: 1.1rem;
+  line-height: 1;
+  color: #fff;
+}
+
+/* Hover nicety */
+.card-media img:hover { transform: scale(1.02); transition: transform .28s ease; }
+
+/* ================================
+   Buttons
+================================ */
 .button {
   display: inline-block;
   background: #1f6feb;
   color: #fff;
   padding: 8px 12px;
   border-radius: 10px;
-  text-decoration: none;
   font-weight: 600;
 }
 .button:hover { background: #2b7bff; text-decoration: none; }
 
-/* ===== Footer ===== */
-.footer {
-  margin-top: 34px;
-  color: #9aa7b7;
-  text-align: center;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 860px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-img { margin: 0 auto; }
-  .card { grid-template-columns: 1fr; }
-  .card-media img { margin: 0 auto; }
-}
-
-/* --- Responsive embeds (Vimeo, Reddit) --- */
+/* ================================
+   Responsive embeds (Vimeo, LinkedIn, etc.)
+================================ */
 .embed-16x9 {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 ratio */
+  padding-top: 56.25%;      /* 16:9 ratio */
   background: #000;
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,.25);
 }
 .embed-16x9 iframe {
   position: absolute;
@@ -158,10 +184,38 @@ a:hover { text-decoration: underline; }
   border: 0;
 }
 
-/* Card images that failed to show due to missing width/height */
-.card-media img {
-  display: block;
-  width: 100%;
-  height: auto;
+/* Optional LinkedIn container if you use it */
+.li-embed {
+  max-width: 720px;
+  margin: 2rem auto;
   border-radius: 12px;
+  overflow: hidden;
+  background: #111827;
+  box-shadow: 0 12px 40px rgba(0,0,0,.25);
+  border: 1px solid #1f2937;
+}
+.li-embed iframe { width: 100%; border: 0; display: block; background: #111827; }
+
+/* ================================
+   Footer
+================================ */
+.footer {
+  margin: 34px 20px 24px;
+  color: #9aa7b7;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ================================
+   Responsive
+================================ */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-img { margin: 0 auto; }
+  .card { grid-template-columns: 1fr; }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
 }
