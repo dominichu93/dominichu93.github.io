@@ -72,10 +72,10 @@
           <p><a class="button" href="country-manager-uk.html">Read the post</a></p>
         </div>
 
-        <!-- Vimeo thumbnail -->
+        <!-- Vimeo thumbnail (placeholder src upgrades after fetch) -->
         <a class="card-media vimeo-thumb" href="country-manager-uk.html"
            data-vimeo-id="1107678192" aria-label="Open post with video">
-          <img alt="Monumental — video thumbnail" loading="lazy" width="1280" height="720" />
+          <img src="symbol_red.png" alt="Monumental — video thumbnail" loading="lazy" width="1280" height="720" />
           <span class="play-badge" aria-hidden="true">▶</span>
         </a>
       </article>
@@ -87,10 +87,10 @@
           <p><a class="button" href="monumental-8-months.html">Read the post</a></p>
         </div>
 
-        <!-- Vimeo thumbnail -->
+        <!-- Vimeo thumbnail (placeholder src upgrades after fetch) -->
         <a class="card-media vimeo-thumb" href="monumental-8-months.html"
            data-vimeo-id="1107678192" aria-label="Open post with video">
-          <img alt="Monumental — video thumbnail" loading="lazy" width="1280" height="720" />
+          <img src="symbol_red.png" alt="Monumental — video thumbnail" loading="lazy" width="1280" height="720" />
           <span class="play-badge" aria-hidden="true">▶</span>
         </a>
       </article>
@@ -98,15 +98,15 @@
       <article class="card card--right-image">
         <div class="card-text">
           <h3>New roles | Monumental</h3>
-          <p>A short update on growth and open roles — the post picked up traction on LinkedIn and Reddit.</p>
+          <p>Growth update and new roles — this post picked up traction on LinkedIn and Reddit.</p>
           <p><a class="button" href="new-roles.html">See roles update</a></p>
         </div>
 
-        <!-- Reddit preview (thumbnail) -->
-        <a class="card-media reddit-thumb" href="new-roles.html"
-           data-embed-url="https://www.reddit.com/r/singularity/comments/1mbawpt/construction_workers_may_become_obsolete_soon_in/?utm_source=share&utm_medium=mweb3x&utm_name=post_embed&utm_term=1&utm_content=1"
-           aria-label="Open post with Reddit preview">
-          <img alt="Reddit discussion" loading="lazy" width="1200" height="630" />
+        <!-- Static photo thumbnail (DJI image) -->
+        <a class="card-media photo-thumb" href="new-roles.html" aria-label="Open roles update">
+          <img src="DJI_20240731144706_0002_D.jpeg"
+               alt="Aerial site drone photo at Monumental’s test facility"
+               loading="lazy" width="1200" height="900" />
         </a>
       </article>
 
@@ -143,31 +143,21 @@
     <a href="projects.html">Projects</a>
   </footer>
 
-  <!-- Thumbnails loader (end of body so DOM exists) -->
+  <!-- Thumbnail upgrader: only Vimeo (New roles uses a static photo) -->
   <script>
-  (() => {
-    // Vimeo thumbnail via oEmbed
+  window.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.vimeo-thumb[data-vimeo-id]').forEach(el => {
-      const id = el.dataset.vimeoId, img = el.querySelector('img');
-      fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${id}`)
-        .then(r=>r.json())
-        .then(d => { const hi=(d.thumbnail_url||'').replace('_295x166','_1280'); img.src = hi || d.thumbnail_url; })
-        .catch(() => { img.src = `https://i.vimeocdn.com/video/${id}.jpg`; });
-    });
-
-    // Reddit preview via oEmbed
-    document.querySelectorAll('.reddit-thumb[data-embed-url]').forEach(el => {
-      const url = encodeURIComponent(el.dataset.embedUrl), img = el.querySelector('img');
-      fetch(`https://www.reddit.com/oembed?url=${url}`)
-        .then(r=>r.json())
+      const id = el.dataset.vimeoId;
+      const img = el.querySelector('img');
+      fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${encodeURIComponent(id)}`)
+        .then(r => r.ok ? r.json() : Promise.reject(r))
         .then(d => {
-          if (d.thumbnail_url) { img.src = d.thumbnail_url; return; }
-          const m = (d.html||'').match(/src="([^"]+)"/);
-          if (m) img.src = m[1];
+          const hi = (d.thumbnail_url || '').replace('_295x166', '_1280');
+          if (hi || d.thumbnail_url) img.src = hi || d.thumbnail_url;
         })
-        .catch(() => { img.src = 'reddit-preview.jpg'; });
+        .catch(() => { /* keep placeholder */ });
     });
-  })();
+  });
   </script>
 
   <!-- Calendly (non-blocking) -->
