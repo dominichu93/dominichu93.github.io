@@ -1,335 +1,215 @@
-/* ================================
-   Base Reset
-================================ */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ============================================================
+   Dominic Hurst - shared stylesheet
+   Dark, monochrome, Space Grotesk. One foreground colour.
+   Used by every page (home + posts). To add a new post page,
+   copy the post template and only change the content.
+============================================================ */
+:root{
+  /* Dark theme (default) */
+  --bg:#0A0A0B;
+  --fg:#ECEAE3;                    /* single foreground colour - everything */
+  --muted:rgba(236,234,227,.45);  /* same colour, lower opacity, for meta only */
+  --rule:rgba(236,234,227,.14);
+  --panel:#0F0F12;                /* embed/video frame fill */
+  --maxw:720px;                    /* reading column (post pages) */
+  --maxw-home:820px;               /* slightly wider for the masthead + photo */
 }
 
-body {
-  background: #0d0d0d;
-  color: #e5e5e5;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.6;
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Light theme - warm cream, near-black ink (one foreground colour) */
+:root[data-theme="light"]{
+  --bg:#FBFAF6;
+  --fg:#1A1A19;
+  --muted:rgba(26,26,25,.50);
+  --rule:rgba(26,26,25,.14);
+  --panel:#F0EEE7;
 }
 
-/* ================================
-   Typography
-================================ */
-h1, h2, h3, h4 {
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.6rem;
+html,body{ background:var(--bg); }
+html{ transition:background-color .2s ease; }
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  background:var(--bg);
+  color:var(--fg);
+  font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;
+  line-height:1.55;
+  font-size:1.0625rem;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 
-p {
-  margin-bottom: 1rem;
-  color: #ccc;
+.wrap{ max-width:var(--maxw); margin:0 auto; padding:3.5rem 1.5rem 5rem; }
+.wrap.home{ max-width:var(--maxw-home); padding-top:5rem; }
+
+/* All links inherit the single foreground colour - no accent anywhere */
+a{ color:inherit; text-decoration:none; }
+
+/* ============================================================
+   Masthead (home)
+============================================================ */
+.masthead{
+  display:flex; align-items:flex-start; justify-content:space-between;
+  gap:2.75rem;
+}
+.mast-text{ flex:1 1 auto; min-width:0; }
+
+.name{
+  font-weight:700;
+  text-transform:uppercase;
+  font-size:clamp(2.4rem, 5.8vw, 3.7rem);
+  line-height:.95;
+  letter-spacing:-.02em;
+}
+.tagline{
+  margin-top:.7rem;
+  font-weight:500;
+  font-size:clamp(1.15rem, 3.2vw, 1.5rem);
+  letter-spacing:-.01em;
+}
+.intro{
+  margin-top:1.15rem;
+  max-width:44ch;
+  font-weight:400;
+  font-size:1.0625rem;
 }
 
-ul {
-  list-style: disc;
-  margin-left: 2rem;
-  padding-left: 0.8rem;
-  margin-bottom: 1rem;
+/* Portrait - 25% larger than the previous 270px */
+.portrait{
+  flex:0 0 338px; width:338px; height:auto; display:block;
+  border-radius:14px; border:1px solid var(--rule); align-self:flex-start;
 }
 
-li {
-  margin-bottom: 0.5rem;
+/* ============================================================
+   Section label + rule
+============================================================ */
+.label{
+  font-size:.8rem; font-weight:600; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--muted); margin-bottom:1.3rem;
+}
+.rule{ border:0; border-top:1px solid var(--rule); margin:3rem 0; }
+.post .rule{ margin:2.25rem 0; }
+
+/* ============================================================
+   Writing list (home) - titles only, Bouke style
+============================================================ */
+.posts{ display:flex; flex-direction:column; }
+.post-row{
+  display:flex; align-items:baseline; justify-content:space-between; gap:1.5rem;
+  padding:1.05rem 0;
+  border-top:1px solid var(--rule);
+}
+.posts .post-row:last-child{ border-bottom:1px solid var(--rule); }
+.post-title{
+  font-weight:500;
+  font-size:clamp(1.25rem, 3.4vw, 1.7rem);
+  letter-spacing:-.01em; line-height:1.15;
+  transition:opacity .15s ease;
+}
+.post-row:hover .post-title{ opacity:.6; }
+.post-year{ color:var(--muted); font-size:.95rem; font-variant-numeric:tabular-nums; flex:0 0 auto; }
+
+/* ============================================================
+   Post page: top bar / wordmark
+============================================================ */
+.topbar{ display:flex; align-items:center; justify-content:space-between; margin-bottom:3rem; gap:1rem; }
+.wordmark{ font-weight:700; text-transform:uppercase; letter-spacing:-.01em; font-size:1.05rem; }
+.topbar .back{ color:var(--muted); font-size:.95rem; }
+.topbar .back:hover{ color:var(--fg); }
+
+/* ============================================================
+   Post page: header + prose
+============================================================ */
+.post-h1{
+  font-weight:700; text-transform:uppercase; letter-spacing:-.02em; line-height:.95;
+  font-size:clamp(2rem, 6vw, 3.4rem); margin-bottom:.85rem;
+}
+.post-meta{ color:var(--muted); font-size:.95rem; letter-spacing:.02em; }
+
+.prose p{ margin:1.1rem 0; max-width:64ch; }
+.prose .lead{ font-size:1.15rem; }
+.prose strong{ font-weight:600; }
+.prose ul{ margin:1.1rem 0 1.1rem 1.2rem; list-style:none; }
+.prose li{ position:relative; padding-left:1.1rem; margin:.55rem 0; max-width:62ch; }
+.prose li::before{ content:""; position:absolute; left:0; top:.7em; width:5px; height:5px; border-radius:50%; background:var(--muted); }
+.prose a{ text-decoration:underline; text-decoration-color:var(--muted); text-underline-offset:3px; }
+.prose a:hover{ text-decoration-color:var(--fg); }
+.prose blockquote{
+  margin:1.75rem 0; padding-left:1.1rem; border-left:2px solid var(--rule);
+  color:var(--fg);
 }
 
-/* Bigger hero name */
-.name {
-  font-size: clamp(36px, 5.8vw, 56px);
-  line-height: 1.05;
-  margin-bottom: 0.6rem;
+/* ============================================================
+   Embeds
+============================================================ */
+.video{
+  position:relative; width:100%; aspect-ratio:16/9; margin:2rem 0;
+  border:1px solid var(--rule); border-radius:14px; overflow:hidden; background:var(--panel);
+}
+.video iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+.embed{
+  border:1px solid var(--rule); border-radius:14px; overflow:hidden;
+  margin:2rem 0; background:#0F0F12;
+}
+.embed iframe{ width:100%; border:0; display:block; }
+.embed.linkedin iframe{ height:600px; }
+.embed.reddit iframe{ height:900px; }
+
+.caption{ color:var(--muted); font-size:.95rem; margin-top:-.4rem; }
+
+.post-img{
+  width:100%; height:auto; display:block; margin:2rem 0;
+  border-radius:14px; border:1px solid var(--rule);
 }
 
-/* ================================
-   Links
-================================ */
-:root {
-  --link: #60a5fa;
-  --link-hover: #8ab8ff;
+/* ============================================================
+   Theme toggle (fixed, top-right, monochrome)
+============================================================ */
+.theme-toggle{
+  position:fixed; top:1rem; right:1rem; z-index:50;
+  font-family:'Space Grotesk',sans-serif; font-size:.78rem; font-weight:600;
+  letter-spacing:.04em; color:var(--muted);
+  background:transparent; border:1px solid var(--rule); border-radius:999px;
+  padding:.35rem .8rem; cursor:pointer;
+  transition:color .15s ease, border-color .15s ease;
+}
+.theme-toggle:hover{ color:var(--fg); border-color:var(--fg); }
+
+/* Inline post links row */
+.more{ margin-top:2rem; display:flex; flex-wrap:wrap; gap:.4rem .9rem; }
+.more a{ text-decoration:underline; text-decoration-color:var(--muted); text-underline-offset:3px; }
+.more a:hover{ text-decoration-color:var(--fg); }
+.more .sep{ color:var(--muted); }
+
+/* ============================================================
+   Footer (shared)
+============================================================ */
+.site-footer{
+  margin-top:4rem; color:var(--muted); font-size:.95rem;
+  display:flex; flex-wrap:wrap; gap:.5rem .9rem; align-items:center;
+}
+.site-footer a:hover{ color:var(--fg); }
+.site-footer .sep{ opacity:.5; }
+
+/* ============================================================
+   Focus + motion
+============================================================ */
+a:focus-visible{ outline:2px solid var(--fg); outline-offset:3px; border-radius:3px; }
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{ transition-duration:.001ms !important; }
 }
 
-a {
-  color: var(--link);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:visited {
-  color: var(--link);
-}
-
-a:hover,
-a:focus-visible {
-  color: var(--link-hover);
-  text-decoration: underline;
-  outline: none;
-}
-
-/* ================================
-   Buttons
-================================ */
-.button {
-  display: inline-block;
-  background: #2563eb;
-  color: #fff !important;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background 0.2s ease;
-}
-
-.button:hover {
-  background: #1d4ed8;
-  text-decoration: none;
-}
-
-/* ================================
-   Hero
-================================ */
-.hero {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-bottom: 4rem;
-  margin-top: 1rem;
-}
-
-.hero-left {
-  flex: 1;
-}
-
-/* Spacing between hero elements */
-.hero-left .name {
-  margin-bottom: 0.6rem;
-}
-.hero-left .tagline {
-  margin-top: 0.6rem;
-  margin-bottom: 0.8rem;
-}
-.hero-left .one-liner {
-  margin-top: 0.4rem;
-  line-height: 1.6;
-  color: #ccc;
-}
-
-.hero-right {
-  flex: 1;
-  text-align: right;
-  max-width: 520px;
-}
-
-/* Rounded-corner wrapper */
-.hero-clip {
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-  display: inline-block;
-}
-
-.hero-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 0;
-  object-fit: contain;
-  object-position: center bottom;
-}
-
-/* ================================
-   About + Section Spacing
-================================ */
-.about {
-  margin-bottom: 3.5rem;
-  border-bottom: 1px solid #222;
-  padding-bottom: 2.5rem;
-}
-
-.section-title {
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-/* ================================
-   Interests
-================================ */
-.interests {
-  list-style: disc;
-  margin-left: 2.5rem;
-  margin-top: 0.5rem;
-  color: #ddd;
-}
-
-.interests li {
-  margin-bottom: 0.6rem;
-}
-
-/* ================================
-   Cards
-================================ */
-.cards {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 3.5rem;
-}
-
-.card {
-  background: #111;
-  border-radius: 18px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  padding: 1.5rem;
-  gap: 1.5rem;
-  transition: transform 0.25s ease;
-}
-
-.card:hover {
-  transform: scale(1.01);
-}
-
-.card-text {
-  flex: 1;
-}
-
-.card-text h3 {
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 0.4rem;
-}
-
-.card-text p {
-  color: #ccc;
-}
-
-/* ================================
-   Card Media (photo vs logo)
-================================ */
-.card-media {
-  border-radius: 18px;
-  overflow: hidden;
-  background: #0d0d0d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Photos vs. Logos */
-.card-media.photo-thumb {
-  flex: 0 0 52%;
-  aspect-ratio: 16 / 9;
-}
-
-.card-media.logo-thumb {
-  flex: 0 0 47%;
-  aspect-ratio: 1 / 1;
-}
-
-/* Images */
-.card-media img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  transition: transform 0.25s ease;
-  object-fit: cover;
-  border-radius: inherit;
-}
-
-/* Logo sizing tweak */
-.card-media.logo-thumb img {
-  object-fit: contain;
-  padding: 8%;
-}
-
-/* Hover zoom for photos only */
-.card-media.photo-thumb:hover img {
-  transform: scale(1.06);
-}
-
-/* Remove play badges */
-.play-badge {
-  display: none;
-}
-
-/* Fix for full-stack SWE card consistency */
-.card--right-image img {
-  border-radius: 18px;
-  object-fit: cover;
-}
-
-/* ================================
-   Footer
-================================ */
-.footer {
-  margin-top: 3rem;
-  font-size: 0.9rem;
-  text-align: center;
-  color: #aaa;
-}
-
-.footer a {
-  color: var(--link);
-}
-
-.footer a:hover {
-  color: var(--link-hover);
-}
-
-/* ================================
+/* ============================================================
    Responsive
-================================ */
-@media (max-width: 860px) {
-  body {
-    padding: 1.5rem;
-  }
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-right {
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .cards {
-    gap: 1.5rem;
-  }
-
-  .card {
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  .card-media.photo-thumb,
-  .card-media.logo-thumb {
-    flex: 0 0 100%;
-  }
-
-  .card-media.photo-thumb {
-    aspect-ratio: 16 / 9;
-  }
-
-  .card-media.logo-thumb {
-    max-height: 260px;
-  }
-
-  .interests {
-    margin-left: 1.8rem;
-  }
+============================================================ */
+@media (max-width:640px){
+  .wrap{ padding:2.75rem 1.25rem 3.5rem; }
+  .wrap.home{ padding-top:3rem; }
+  .masthead{ flex-direction:column; align-items:flex-start; gap:1.75rem; }
+  .portrait{ width:70%; flex-basis:auto; }
+  .post-row{ flex-direction:column; gap:.2rem; }
+  .embed.linkedin iframe{ height:560px; }
+  .embed.reddit iframe{ height:760px; }
 }

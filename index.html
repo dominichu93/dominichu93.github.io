@@ -1,146 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dominic Hurst</title>
+  <meta name="description" content="Dominic Hurst - Chief of Staff at Monumental. I build high-performing teams from 0 to 1, across seed, Series A/B, scale-up and big tech." />
+  <link rel="canonical" href="https://dominichu93.github.io/" />
 
-  <!-- Perf preconnects (optional but fine to keep) -->
-  <link rel="preconnect" href="https://vimeo.com">
-  <link rel="preconnect" href="https://player.vimeo.com">
-  <link rel="preconnect" href="https://i.vimeocdn.com" crossorigin>
-  <link rel="preconnect" href="https://www.reddit.com">
-  <link rel="preconnect" href="https://redditmedia.com">
-  <link rel="dns-prefetch" href="https://vimeo.com">
-  <link rel="dns-prefetch" href="https://www.reddit.com">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dominic Hurst" />
+  <meta property="og:description" content="Chief of Staff at Monumental. I build high-performing teams from 0 to 1." />
+  <meta property="og:url" content="https://dominichu93.github.io/" />
+  <meta property="og:image" content="https://dominichu93.github.io/your-hero-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Fonts + CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2025-10-20-2" />
+  <link rel="icon" href="images/symbol_blue.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=2026-06-26" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 </head>
 <body>
-  <main>
+  <button class="theme-toggle" type="button" aria-label="Toggle light or dark mode">Light</button>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-left">
+  <main class="wrap home">
+
+    <!-- MASTHEAD -->
+    <header class="masthead">
+      <div class="mast-text">
         <h1 class="name">Dominic Hurst</h1>
-        <h2 class="tagline">I build teams.</h2>
-        <p class="one-liner">
-          I work at the intersection of talent, people operations and execution — scaling
-          high-performing teams, from 0→1, in seed, series A, B, scale-up and big tech environments.
+        <p class="tagline">I build teams.</p>
+        <p class="intro">
+          I work at the intersection of talent, people operations and execution -
+          scaling high-performing teams from 0 to 1, across seed, Series A/B, scale-up and big tech.
         </p>
       </div>
+      <img class="portrait" src="your-hero-image.jpg" alt="Portrait of Dominic Hurst" width="338" height="423" />
+    </header>
 
-      <div class="hero-right">
-        <!-- Wrapper ensures rounded corners show even on white-background images -->
-        <div class="hero-clip">
-          <img src="your-hero-image.jpg" class="hero-img" alt="Dominic Hurst portrait" loading="lazy" width="520" height="650">
-        </div>
-      </div>
-    </section>
+    <hr class="rule" />
 
     <!-- ABOUT -->
-    <section class="about">
-      <h3 class="section-title">About</h3>
+    <section class="prose">
+      <p class="label">About</p>
       <p>
-        I’m Chief of Staff at
-        <a href="https://www.monumental.co/our-vision" target="_blank" rel="noopener">Monumental</a> in Amsterdam,
-        where we’re automating on-site construction with robotics and software.
-        Previously I led talent at
-        <a href="https://about.fb.com/news/2023/10/facebook-becomes-meta/" target="_blank" rel="noopener">Meta</a>,
+        I&rsquo;m Chief of Staff at <a href="https://www.monumental.co/our-vision" target="_blank" rel="noopener">Monumental</a>
+        in Amsterdam, where we&rsquo;re automating on-site construction with robotics and software.
+        Previously I led talent at <a href="https://about.fb.com/news/2023/10/facebook-becomes-meta/" target="_blank" rel="noopener">Meta</a>,
         <a href="https://ai.facebook.com/" target="_blank" rel="noopener">Meta AI Research</a>,
         <a href="https://oaknorth.com/" target="_blank" rel="noopener">OakNorth AI</a>,
         <a href="https://blog.sphere.me" target="_blank" rel="noopener">Sphere</a> (acquired by Twitter),
-        and <a href="https://polystream.com/" target="_blank" rel="noopener">Polystream</a>
-        (acquired by Mythical Games) in London.
+        and <a href="https://polystream.com/" target="_blank" rel="noopener">Polystream</a> (acquired by Mythical Games) in London.
       </p>
     </section>
 
-    <!-- INTERESTS -->
+    <hr class="rule" />
+
+    <!-- WRITING -->
     <section>
-      <h3 class="section-title">Interests</h3>
-      <ul class="interests">
-        <li>I grew up in a family of builders; I’m curious about how construction, architecture, and history shape the places we live</li>
-        <li>Economics, geopolitics, and how policy and markets shape systems like housing and innovation</li>
-        <li>How software and AI can make practical, positive changes in the physical world</li>
-        <li>Finding exceptional talent in unlikely places</li>
-      </ul>
+      <p class="label">Writing</p>
+      <nav class="posts">
+        <a class="post-row" href="country-manager-uk.html">
+          <span class="post-title">Entering new markets - Country Manager, UK</span>
+          <span class="post-year">2025</span>
+        </a>
+        <a class="post-row" href="monumental-8-months.html">
+          <span class="post-title">My first eight months at Monumental</span>
+          <span class="post-year">2024</span>
+        </a>
+        <a class="post-row" href="new-roles.html">
+          <span class="post-title">New roles at Monumental</span>
+          <span class="post-year">2024</span>
+        </a>
+        <a class="post-row" href="full-stack-swe-kreekrijk.html">
+          <span class="post-title">Full-stack SWE &amp; eight villas at Kreekrijk</span>
+          <span class="post-year">2024</span>
+        </a>
+        <a class="post-row" href="https://www.monumental.co/atrium" target="_blank" rel="noopener">
+          <span class="post-title">Atrium OS - Monumental</span>
+          <span class="post-year">&#8599;</span>
+        </a>
+      </nav>
     </section>
 
-    <!-- FEATURED / WRITING -->
-    <section class="cards">
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <a href="mailto:dominic@monumental.co">Email</a><span class="sep">/</span>
+      <a href="https://linkedin.com/in/dhurst1" target="_blank" rel="noopener">LinkedIn</a><span class="sep">/</span>
+      <a href="https://github.com/dominichu93" target="_blank" rel="noopener">GitHub</a><span class="sep">/</span>
+      <a href="https://calendly.com/dom-monumental/vc" target="_blank" rel="noopener">Schedule time</a>
+    </footer>
 
-      <!-- Entering new markets (photo) -->
-      <article class="card card--right-image">
-        <div class="card-text">
-          <h3>Entering new markets | Country Manager, UK</h3>
-          <p>Why we’re hiring our first Country Manager in the UK, and what the role owns.</p>
-          <p><a class="button" href="country-manager-uk.html">Read the post</a></p>
-        </div>
-        <a class="card-media photo-thumb" href="country-manager-uk.html" aria-label="Open post">
-          <img src="images/IMG_3052.jpg" alt="Monumental deployment in London" loading="lazy" width="1280" height="720" />
-        </a>
-      </article>
-
-      <!-- 8 months (logo) -->
-      <article class="card card--right-image">
-        <div class="card-text">
-          <h3>My first eight months | Monumental</h3>
-          <p>Team growth, funding, deployments, and a world-first: robots laying bricks on-site.</p>
-          <p><a class="button" href="monumental-8-months.html">Read the post</a></p>
-        </div>
-        <a class="card-media logo-thumb" href="monumental-8-months.html" aria-label="Open post">
-          <img src="images/symbol_red.svg" alt="Monumental logo" loading="lazy" width="512" height="512" />
-        </a>
-      </article>
-
-      <!-- New roles (photo) -->
-      <article class="card card--right-image">
-        <div class="card-text">
-          <h3>New roles | Monumental</h3>
-          <p>Growth update and new roles — this post picked up traction on LinkedIn and Reddit.</p>
-          <p><a class="button" href="new-roles.html">See roles update</a></p>
-        </div>
-        <a class="card-media photo-thumb" href="new-roles.html" aria-label="Open roles update">
-          <img src="images/new-roles-dji.jpg" alt="Aerial photo of Monumental’s facility" loading="lazy" width="1200" height="900" />
-        </a>
-      </article>
-
-      <!-- Atrium OS (logo) -->
-      <article class="card card--right-image">
-        <div class="card-text">
-          <h3>Atrium OS | Monumental</h3>
-          <p>Our platform for software-defined construction.</p>
-          <p><a class="button" href="https://www.monumental.co/atrium" target="_blank" rel="noopener">Learn more</a></p>
-        </div>
-        <a class="card-media logo-thumb" href="https://www.monumental.co/atrium" target="_blank" rel="noopener">
-          <img src="images/symbol_blue.svg" alt="Atrium OS" loading="lazy" width="512" height="512" />
-        </a>
-      </article>
-
-      <!-- Full-Stack SWE (photo wide) -->
-      <article class="card card--right-image">
-        <div class="card-text">
-          <h3>Full-stack SWE & building eight villas at Kreekrijk</h3>
-          <p>Why this is still “just software”, plus a recent on-site deployment.</p>
-          <p><a class="button" href="full-stack-swe-kreekrijk.html">Read more</a></p>
-        </div>
-        <a class="card-media photo-thumb" href="full-stack-swe-kreekrijk.html">
-          <img src="RobotPhoto.jpg" alt="Monumental robot thumbnail" loading="lazy" />
-        </a>
-      </article>
-
-    </section>
   </main>
 
-  <footer class="footer">
-    &copy; 2025 Dominic Hurst —
-    <a href="mailto:dominic@monumental.co">Email</a> ·
-    <a href="https://linkedin.com/in/dhurst1" target="_blank" rel="noopener">LinkedIn</a> ·
-    <a href="https://github.com/dominichu93" target="_blank" rel="noopener">GitHub</a> ·
-    <a href="projects.html">Projects</a> ·
-    <a href="https://calendly.com/dom-monumental/vc" target="_blank" rel="noopener">Schedule time</a>
-  </footer>
+  <script>
+    (function(){
+      var b=document.querySelector('.theme-toggle');
+      function lbl(){ b.textContent = document.documentElement.getAttribute('data-theme')==='light' ? 'Dark' : 'Light'; }
+      b.addEventListener('click',function(){
+        var d=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';
+        document.documentElement.setAttribute('data-theme',d);
+        try{ localStorage.setItem('theme',d); }catch(e){}
+        lbl();
+      });
+      lbl();
+    })();
+  </script>
 </body>
 </html>

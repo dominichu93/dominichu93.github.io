@@ -1,71 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>New Roles | Monumental</title>
-  <meta name="description" content="Update on Monumental’s growth and open roles, plus the Reddit discussion the post sparked." />
-
-  <!-- Fonts + shared stylesheet -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Page-local tweaks -->
-  <style>
-    header { text-align:center; padding:2rem 1rem 1rem; }
-    header h1 { font-size:clamp(26px,4.8vw,38px); font-weight:800; color:#fff; margin:.5rem 0; }
-    header a { color:#60a5fa; font-size:.95rem; }
-    main.content { max-width:880px; margin:0 auto; padding:32px 20px 72px; line-height:1.6; }
-
-    /* Full Reddit post embed */
-    .embed-reddit{
-      border:1px solid #1f2937; border-radius:12px; overflow:hidden;
-      background:#111827; box-shadow:0 12px 40px rgba(0,0,0,.25);
-      margin:2rem 0;
-    }
-    .embed-reddit iframe{
-      width:100%; height:1200px; border:0; display:block;
-    }
-    @media (max-width:600px){ .embed-reddit iframe{ height:900px; } }
-
-    /* Image */
-    .hero-img{
-      width:100%; border-radius:12px; margin:2rem 0;
-      box-shadow:0 12px 40px rgba(0,0,0,.35);
-    }
-
-    footer { text-align:center; padding:2rem; color:#6b7280; font-size:.9rem; }
-  </style>
+  <title>New roles at Monumental | Dominic Hurst</title>
+  <meta name="description" content="A growth update and open roles at Monumental that picked up traction on LinkedIn and Reddit." />
+  <link rel="canonical" href="https://dominichu93.github.io/new-roles.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="New roles at Monumental" />
+  <meta property="og:description" content="A growth update that picked up traction on LinkedIn and Reddit." />
+  <meta property="og:image" content="https://dominichu93.github.io/images/new-roles-dji.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="images/symbol_blue.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=2026-06-26" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 </head>
-
 <body>
-  <header>
-    <h1>New Roles | Monumental</h1>
-    <p><a href="index.html">← Back to Home</a></p>
-  </header>
+  <button class="theme-toggle" type="button" aria-label="Toggle light or dark mode">Light</button>
 
-  <main class="content">
-    <p>Last week, I shared a post on LinkedIn about our growth and open roles at Monumental. The post unexpectedly gained traction — and ended up discussed by a few hundred people on Reddit too.</p>
+  <main class="wrap post">
 
-    <!-- Full Reddit post (shows your LinkedIn image + comments) -->
-    <div class="embed-reddit">
-      <iframe
-        src="https://www.redditmedia.com/r/singularity/comments/1mbawpt/construction_workers_may_become_obsolete_soon_in_the_first_world/?embed=true&theme=dark&showmedia=true"
-        loading="lazy"
-        scrolling="yes"
-        title="Reddit post: Construction workers may become obsolete soon in the first world">
-      </iframe>
+    <div class="topbar">
+      <a class="wordmark" href="index.html">Dominic Hurst</a>
+      <a class="back" href="index.html">&larr; All writing</a>
     </div>
 
-    <!-- Drone image (ensure filename/case matches your repo exactly) -->
-    <img class="hero-img" src="DJI_20240731144706_0002_D.jpeg"
-         alt="Aerial site drone photo of Monumental’s test facility" loading="lazy" />
+    <article>
+      <h1 class="post-h1">New roles at Monumental</h1>
+      <p class="post-meta">Note &middot; 2024</p>
 
-    <p>This drone shot shows our facility — it’s where the robots and our software platform, Atrium, come together.</p>
+      <hr class="rule" />
+
+      <div class="prose">
+        <p class="lead">
+          Last week I shared a post on LinkedIn about our growth and open roles at Monumental.
+          The post unexpectedly gained traction - and ended up discussed by a few hundred people on Reddit too.
+        </p>
+      </div>
+
+      <div class="embed reddit">
+        <iframe
+          src="https://www.redditmedia.com/r/singularity/comments/1mbawpt/construction_workers_may_become_obsolete_soon_in_the_first_world/?embed=true&amp;theme=dark&amp;showmedia=true"
+          loading="lazy" scrolling="yes"
+          title="Reddit discussion of Monumental&rsquo;s growth post"></iframe>
+      </div>
+
+      <img class="post-img" src="images/new-roles-dji.jpg" alt="Aerial drone photo of Monumental&rsquo;s test facility" loading="lazy" width="1200" height="900" />
+
+      <div class="prose">
+        <p>This drone shot shows our facility - it&rsquo;s where the robots and our software platform, Atrium, come together.</p>
+      </div>
+
+      <nav class="more">
+        <a href="https://www.monumental.co/jobs" target="_blank" rel="noopener">See open roles</a><span class="sep">/</span>
+        <a href="https://www.monumental.co/our-vision" target="_blank" rel="noopener">Our vision</a>
+      </nav>
+    </article>
+
+    <footer class="site-footer">
+      <a href="mailto:dominic@monumental.co">Email</a><span class="sep">/</span>
+      <a href="https://linkedin.com/in/dhurst1" target="_blank" rel="noopener">LinkedIn</a><span class="sep">/</span>
+      <a href="https://github.com/dominichu93" target="_blank" rel="noopener">GitHub</a><span class="sep">/</span>
+      <a href="https://calendly.com/dom-monumental/vc" target="_blank" rel="noopener">Schedule time</a>
+    </footer>
+
   </main>
 
-  <footer>
-    &copy; 2025 Dominic Hurst
-  </footer>
+  <script>
+    (function(){
+      var b=document.querySelector('.theme-toggle');
+      function lbl(){ b.textContent = document.documentElement.getAttribute('data-theme')==='light' ? 'Dark' : 'Light'; }
+      b.addEventListener('click',function(){
+        var d=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';
+        document.documentElement.setAttribute('data-theme',d);
+        try{ localStorage.setItem('theme',d); }catch(e){}
+        lbl();
+      });
+      lbl();
+    })();
+  </script>
 </body>
 </html>

@@ -1,130 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Full-Stack SWE & Building 8 Villas at Kreekrijk | Monumental</title>
-
-  <meta name="description" content="Why full-stack at Monumental is still just software engineering — plus a recent deployment where our robots built 8 terraced houses at Kreekrijk." />
-
-  <!-- Fonts + shared styles -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Page-specific layout tweaks -->
-  <style>
-    main.content {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 32px 20px 72px;
-    }
-
-    h1 {
-      margin: 0 0 8px;
-      font-weight: 800;
-      color: #fff;
-      font-size: clamp(26px, 4.8vw, 38px);
-    }
-
-    .sub {
-      margin: 0 0 18px;
-      color: #cfd8e3;
-      font-weight: 600;
-      font-size: 1.05rem;
-    }
-
-    p { margin: 12px 0; }
-
-    .video-embed {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 12px 40px rgba(0,0,0,.35);
-      margin: 24px 0;
-    }
-
-    .video-embed iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-
-    .button {
-      display: inline-block;
-      background: #1f6feb;
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-weight: 600;
-    }
-
-    .button:hover { background: #2b7bff; text-decoration: none; }
-
-    .back {
-      margin-top: 32px;
-      display: inline-block;
-    }
-  </style>
+  <title>Full-stack SWE &amp; eight villas at Kreekrijk | Dominic Hurst</title>
+  <meta name="description" content="Why full-stack at Monumental is still just software engineering - plus a recent deployment where our robots built eight terraced houses at Kreekrijk." />
+  <link rel="canonical" href="https://dominichu93.github.io/full-stack-swe-kreekrijk.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Full-stack SWE &amp; eight villas at Kreekrijk" />
+  <meta property="og:description" content="Why this is still just software engineering, plus a recent on-site deployment." />
+  <meta property="og:image" content="https://dominichu93.github.io/RobotPhoto.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="images/symbol_blue.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=2026-06-26" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 </head>
-
 <body>
-  <main class="content">
-    <h1>Full-Stack SWE & Building 8 Villas at Kreekrijk</h1>
-    <p>
-      Something I hear a lot from software engineers is:
-      <em>“I’ve heard of Monumental and seen your job postings — but I wasn’t sure if I’m the right fit...”</em>
-    </p>
+  <button class="theme-toggle" type="button" aria-label="Toggle light or dark mode">Light</button>
 
-    <p>
-      The hesitation makes sense; building software for robots does sound niche. It’s a bit more complicated than SaaS; there are more constraints, but in the end — it’s still just software engineering.
-    </p>
+  <main class="wrap post">
 
-    <p>
-      The challenges Monumental solves combine hardware, software, and infrastructure at scale — all while maintaining high availability on construction sites.
-    </p>
-
-    <p>
-      <strong>Atrium</strong>, our OS for software‑defined construction, lets us plan, deploy, simulate, and optimise everything from wall designs to managing robot operations. It integrates CAD, ERP, robotics control, and fleet management — enabling us to analyse results, investigate failures, and refine our builds in the real world and simulation.
-    </p>
-
-    <p>
-      We’re hiring software engineers who want to build full‑stack software that interacts with the physical world.
-    </p>
-
-    <div class="video-embed">
-      <!-- Vimeo embed of the Kreekrijk deployment -->
-      <iframe
-        src="https://player.vimeo.com/video/1099667889?h=5ea1ce2912"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-        title="Kreekrijk deployment — 8 terraced houses without masons"
-      ></iframe>
-    </div>
-    <p style="color:#aab6c5; font-size:.95rem;">
-      Recent deployment at Kreekrijk, where our robots built 8 terraced houses without masons — a world first.
-    </p>
-
-    <div class="links">
-      <a class="button" href="https://www.monumental.co/atrium" target="_blank" rel="noopener">Read about Atrium OS</a>
-      <a class="button" href="https://bou.ke/blog/robotics/" target="_blank" rel="noopener">Bouke on getting into robotics</a>
-      <a class="button" href="https://www.monumental.co/jobs" target="_blank" rel="noopener">Open roles at Monumental</a>
+    <div class="topbar">
+      <a class="wordmark" href="index.html">Dominic Hurst</a>
+      <a class="back" href="index.html">&larr; All writing</a>
     </div>
 
-    <div class="back">
-      <a href="index.html">← Back to homepage</a>
-    </div>
+    <article>
+      <h1 class="post-h1">Full-stack SWE &amp; eight villas at Kreekrijk</h1>
+      <p class="post-meta">Essay &middot; 2024</p>
+
+      <hr class="rule" />
+
+      <div class="prose">
+        <p class="lead">
+          Something I hear a lot from software engineers is: &ldquo;I&rsquo;ve heard of Monumental and seen your
+          job postings - but I wasn&rsquo;t sure if I&rsquo;m the right fit...&rdquo;
+        </p>
+        <p>
+          The hesitation makes sense; building software for robots does sound niche. It&rsquo;s a bit more
+          complicated than SaaS; there are more constraints, but in the end - it&rsquo;s still just software engineering.
+        </p>
+        <p>
+          The challenges Monumental solves combine hardware, software, and infrastructure at scale - all while
+          maintaining high availability on construction sites.
+        </p>
+        <p>
+          <strong>Atrium</strong>, our OS for software-defined construction, lets us plan, deploy, simulate, and
+          optimise everything from wall designs to managing robot operations. It integrates CAD, ERP, robotics
+          control, and fleet management - enabling us to analyse results, investigate failures, and refine our
+          builds in the real world and simulation.
+        </p>
+        <p>
+          We&rsquo;re hiring software engineers who want to build full-stack software that interacts with the physical world.
+        </p>
+      </div>
+
+      <div class="video">
+        <iframe
+          src="https://player.vimeo.com/video/1099667889?h=5ea1ce2912"
+          allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+          title="Kreekrijk deployment - eight terraced houses without masons"></iframe>
+      </div>
+      <p class="caption">Recent deployment at Kreekrijk, where our robots built eight terraced houses without masons - a world first.</p>
+
+      <nav class="more">
+        <a href="https://www.monumental.co/atrium" target="_blank" rel="noopener">Read about Atrium OS</a><span class="sep">/</span>
+        <a href="https://bou.ke/blog/robotics/" target="_blank" rel="noopener">Bouke on getting into robotics</a><span class="sep">/</span>
+        <a href="https://www.monumental.co/jobs" target="_blank" rel="noopener">Open roles at Monumental</a>
+      </nav>
+    </article>
+
+    <footer class="site-footer">
+      <a href="mailto:dominic@monumental.co">Email</a><span class="sep">/</span>
+      <a href="https://linkedin.com/in/dhurst1" target="_blank" rel="noopener">LinkedIn</a><span class="sep">/</span>
+      <a href="https://github.com/dominichu93" target="_blank" rel="noopener">GitHub</a><span class="sep">/</span>
+      <a href="https://calendly.com/dom-monumental/vc" target="_blank" rel="noopener">Schedule time</a>
+    </footer>
+
   </main>
+
+  <script>
+    (function(){
+      var b=document.querySelector('.theme-toggle');
+      function lbl(){ b.textContent = document.documentElement.getAttribute('data-theme')==='light' ? 'Dark' : 'Light'; }
+      b.addEventListener('click',function(){
+        var d=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';
+        document.documentElement.setAttribute('data-theme',d);
+        try{ localStorage.setItem('theme',d); }catch(e){}
+        lbl();
+      });
+      lbl();
+    })();
+  </script>
 </body>
 </html>

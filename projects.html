@@ -1,31 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects | Dominic Hurst</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <title>Writing | Dominic Hurst</title>
+  <meta name="description" content="Writing by Dominic Hurst on construction robotics, hiring, and Monumental." />
+  <link rel="canonical" href="https://dominichu93.github.io/projects.html" />
+  <link rel="icon" href="images/symbol_blue.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=2026-06-26" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 </head>
 <body>
-  <main class="page">
-    <h1>Work & Writing</h1>
-    <section class="grid">
-      <!-- Repeat these blocks -->
-      <a href="full-stack-swe-kreekrijk.html" class="grid-item">
-        <img src="RobotPhoto.jpg" alt="Kreekrijk robotics deployment" />
-        <div class="caption">Full-stack SWE & 8 Villas</div>
+  <button class="theme-toggle" type="button" aria-label="Toggle light or dark mode">Light</button>
+
+  <main class="wrap post">
+
+    <div class="topbar">
+      <a class="wordmark" href="index.html">Dominic Hurst</a>
+      <a class="back" href="index.html">&larr; Home</a>
+    </div>
+
+    <h1 class="post-h1">Writing</h1>
+    <hr class="rule" />
+
+    <nav class="posts">
+      <a class="post-row" href="country-manager-uk.html">
+        <span class="post-title">Entering new markets - Country Manager, UK</span>
+        <span class="post-year">2025</span>
       </a>
-      <a href="monumental-8-months.html" class="grid-item">
-        <img src="reddit-preview.jpg" alt="Monumental 8 months update" />
-        <div class="caption">8 Months at Monumental</div>
+      <a class="post-row" href="monumental-8-months.html">
+        <span class="post-title">My first eight months at Monumental</span>
+        <span class="post-year">2024</span>
       </a>
-      <a href="new-roles.html" class="grid-item">
-        <img src="your-hero-image.jpg" alt="Hiring update" />
-        <div class="caption">We're hiring</div>
+      <a class="post-row" href="new-roles.html">
+        <span class="post-title">New roles at Monumental</span>
+        <span class="post-year">2024</span>
       </a>
-      <!-- Add more as needed -->
-    </section>
+      <a class="post-row" href="full-stack-swe-kreekrijk.html">
+        <span class="post-title">Full-stack SWE &amp; eight villas at Kreekrijk</span>
+        <span class="post-year">2024</span>
+      </a>
+      <a class="post-row" href="https://www.monumental.co/atrium" target="_blank" rel="noopener">
+        <span class="post-title">Atrium OS - Monumental</span>
+        <span class="post-year">&#8599;</span>
+      </a>
+    </nav>
+
+    <footer class="site-footer">
+      <a href="mailto:dominic@monumental.co">Email</a><span class="sep">/</span>
+      <a href="https://linkedin.com/in/dhurst1" target="_blank" rel="noopener">LinkedIn</a><span class="sep">/</span>
+      <a href="https://github.com/dominichu93" target="_blank" rel="noopener">GitHub</a><span class="sep">/</span>
+      <a href="https://calendly.com/dom-monumental/vc" target="_blank" rel="noopener">Schedule time</a>
+    </footer>
+
   </main>
+
+  <script>
+    (function(){
+      var b=document.querySelector('.theme-toggle');
+      function lbl(){ b.textContent = document.documentElement.getAttribute('data-theme')==='light' ? 'Dark' : 'Light'; }
+      b.addEventListener('click',function(){
+        var d=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';
+        document.documentElement.setAttribute('data-theme',d);
+        try{ localStorage.setItem('theme',d); }catch(e){}
+        lbl();
+      });
+      lbl();
+    })();
+  </script>
 </body>
 </html>

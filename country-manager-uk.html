@@ -1,55 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Country Manager UK — LinkedIn Post | Dominic Hurst</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Why we’re hiring a Country Manager UK at Monumental — LinkedIn post and role context." />
-  <style>
-    body { font-family: 'Inter', sans-serif; background:#0f1117; color:#e5e7eb; margin:0 }
-    header { padding:2rem 1rem 1rem; text-align:center }
-    header h1 { font-size:2rem; font-weight:800; color:#fff; margin:.25rem 0 }
-    header a { color:#60a5fa }
-    .content { max-width:800px; margin:auto; padding:2rem 1.5rem; line-height:1.6 }
-    .content a { color:#60a5fa }
-    blockquote { border-left:4px solid #374151; padding-left:1rem; color:#9ca3af; font-style:italic }
-    /* LinkedIn embed wrapper (keeps style consistent) */
-    .li-embed {
-      max-width:720px; margin:2rem auto; border-radius:12px; overflow:hidden;
-      background:#111827; box-shadow:0 12px 40px rgba(0,0,0,.25);
-      border:1px solid #1f2937;
-    }
-    .li-embed iframe { width:100%; height:970px; border:0; display:block; background:#111827 }
-    @media (max-width:520px){ .li-embed iframe{ height:780px } }
-    footer { text-align:center; padding:2rem; color:#6b7280; font-size:.9rem }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entering new markets - Country Manager, UK | Dominic Hurst</title>
+  <meta name="description" content="Why Monumental is hiring its first UK Country Manager, and what the role owns." />
+  <link rel="canonical" href="https://dominichu93.github.io/country-manager-uk.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Entering new markets - Country Manager, UK" />
+  <meta property="og:description" content="Why Monumental is hiring its first UK Country Manager, and what the role owns." />
+  <meta property="og:image" content="https://dominichu93.github.io/images/IMG_3052.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="images/symbol_blue.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=2026-06-26" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 </head>
 <body>
+  <button class="theme-toggle" type="button" aria-label="Toggle light or dark mode">Light</button>
 
-  <header>
-    <h1>Country Manager UK — LinkedIn Post</h1>
-    <p><a href="index.html">← Back to Home</a></p>
-  </header>
+  <main class="wrap post">
 
-    <!-- Embedded LinkedIn post -->
-    <div class="li-embed">
-      <iframe
-        src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7384522499142676480"
-        title="Embedded LinkedIn post"
-        loading="lazy"
-        allowfullscreen>
-      </iframe>
+    <div class="topbar">
+      <a class="wordmark" href="index.html">Dominic Hurst</a>
+      <a class="back" href="index.html">&larr; All writing</a>
     </div>
 
-    <p>
-      ➡️ <a href="https://www.monumental.co/jobs" target="_blank" rel="noopener">See open roles</a> ·
-      <a href="https://www.monumental.co/our-vision" target="_blank" rel="noopener">Our vision</a>
-    </p>
-  </div>
+    <article>
+      <h1 class="post-h1">Entering new markets - Country Manager, UK</h1>
+      <p class="post-meta">LinkedIn post &middot; 2025</p>
 
-  <footer>
-    &copy; 2025 Dominic Hurst
-  </footer>
+      <hr class="rule" />
+
+      <div class="prose">
+        <p class="lead">
+          The UK is short of 20,000 bricklayers - and thousands more across other skilled trades.
+          To reach the 1.5 million homes target by 2029, something has to change. Here&rsquo;s why
+          we&rsquo;re hiring our first Country Manager in the UK, and what the role owns.
+        </p>
+      </div>
+
+      <div class="embed linkedin">
+        <iframe
+          src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7384522499142676480"
+          title="Embedded LinkedIn post" loading="lazy" allowfullscreen></iframe>
+      </div>
+
+      <nav class="more">
+        <a href="https://www.monumental.co/jobs" target="_blank" rel="noopener">See open roles</a><span class="sep">/</span>
+        <a href="https://www.monumental.co/our-vision" target="_blank" rel="noopener">Our vision</a>
+      </nav>
+    </article>
+
+    <footer class="site-footer">
+      <a href="mailto:dominic@monumental.co">Email</a><span class="sep">/</span>
+      <a href="https://linkedin.com/in/dhurst1" target="_blank" rel="noopener">LinkedIn</a><span class="sep">/</span>
+      <a href="https://github.com/dominichu93" target="_blank" rel="noopener">GitHub</a><span class="sep">/</span>
+      <a href="https://calendly.com/dom-monumental/vc" target="_blank" rel="noopener">Schedule time</a>
+    </footer>
+
+  </main>
+
+  <script>
+    (function(){
+      var b=document.querySelector('.theme-toggle');
+      function lbl(){ b.textContent = document.documentElement.getAttribute('data-theme')==='light' ? 'Dark' : 'Light'; }
+      b.addEventListener('click',function(){
+        var d=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';
+        document.documentElement.setAttribute('data-theme',d);
+        try{ localStorage.setItem('theme',d); }catch(e){}
+        lbl();
+      });
+      lbl();
+    })();
+  </script>
 </body>
 </html>
