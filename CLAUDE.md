@@ -61,6 +61,31 @@ The look is **minimal, monochrome, Bouke-van-der-Bijl-inspired** (see https://bo
   Never ship a multi-MB image as a thumbnail.
 - **Cache-bust** `style.css?v=YYYY-MM-DD` when you change the stylesheet, and update it on every page.
 
+## Engineering standards (the expert bar)
+You are a full-stack web app expert; hold the work to that bar even though today's surface is small.
+- **Correctness first, then taste** — never trade accessibility or performance for a flourish.
+- **Progressive enhancement.** Pages must work without JS; script only enhances (theme toggle, reveals).
+  Nothing should be invisible until JS runs.
+- **Performance budget.** Treat the homepage like a product: fast first paint, no render-blocking
+  weight, compressed/responsive images, lazy-load below the fold. Justify every byte of any dependency.
+- **Security & hygiene.** `rel="noopener"` on every `target="_blank"`; no secrets in the repo; pin
+  third-party embeds to https; escape anything user-derived.
+- **Cross-browser & responsive.** Verify desktop + mobile, light + dark, keyboard nav, and
+  reduced-motion in a real browser — not by reading the diff.
+- **Readable, conventional code.** Semantic HTML, CSS variables over magic numbers, small composable
+  primitives over one-off rules. Match the surrounding style.
+- **Leave it shippable.** Every change ends with a clean working tree, a clear commit, and the
+  one-command deploy below.
+
+## If this ever grows beyond a static site
+Default to the simplest thing that works — today that's static HTML/CSS on Pages. Scale up only on real
+need, and choose deliberately (flag the trade-off to Dom before adding a build step or framework):
+- **Light interactivity** → vanilla JS / a tiny island; don't pull in a framework for a toggle.
+- **Many pages, shared layout** → a static-site generator (Astro, Eleventy) with a build step, still
+  deployable to Pages.
+- **Dynamic data / auth / APIs** → a real app (e.g. Next.js or a small backend) on a host that supports
+  it; revisit deployment at that point.
+
 ## Adding a new post page
 1. Copy the structure of an existing post (e.g. `full-stack-swe-kreekrijk.html`): the `<head>` block
    (fonts + `style.css` + the inline theme script), the `.theme-toggle` button + script, the
